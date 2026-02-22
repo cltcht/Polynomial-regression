@@ -58,7 +58,7 @@ One usually maximises $R^2$ defined as ${SS_{mean} - SS_{fit}}\over{SS_{mean}}$ 
 {SS_{fit}} = {\sum_{k=1}^{n} {(\hat{Y}_k - \bar{Y})}^2\over{n}}
 ```
 
-Realistically, one just want to minimise ${SS_{fit}}$. Therefore our goal is to find a vector $(\hat{a}, \hat{b}) = argmin(\hat{Y}(a, b, X))$.
+Realistically, one just want to minimise ${SS_{fit}}$. Therefore our goal is to find a vector $(\hat{a}, \hat{b}) = argmin({SS_{fit}}(a, b, X))$.
 
 Hypothesis, In order not to compute indefinitely :
 * One can set limits to the vector space that contains $(a, b)$. Let's call this bounded space $A \times B$
