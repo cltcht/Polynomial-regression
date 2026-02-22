@@ -47,7 +47,7 @@ Objective is to find $(a, b) \in \mathbb{R}\times\mathbb{R}$ such as a linear ap
 \hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T
 ```
 
-Let write the mean ${\sum_{k=1}^{n} }\over{n}$ as $\bar{Y}$ .  
+Let write the mean ${\sum_{k=1}^{n} Y_{k} }\over{n}$ as $\bar{Y}$ .  
 
 One usually maximises $R^2$ defined as ${SS_{mean} - SS_{fit}}\over{SS_{mean}}$ as fitting metrics with :
 
