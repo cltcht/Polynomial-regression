@@ -80,13 +80,23 @@ Then run `python3 espace_des_phases.py`
 As reminder we have $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$. Which we can rewrite as :
 
 ```math
-\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T = A \times w \\ 
+\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T = A \times w
 ```
+
 ```math
-A \in M_{(n,2)} ({\mathbb{R})) \newline
+A = \begin{bmatrix}
+  X_1 & 1 \\
+  X_2 & 1\\
+  \vdots \\
+  X_n & 1
+\end{bmatrix}, \in M_{(n,2)} ({\mathbb{R}}),
 ```
+
 ```math
-w \in \mathbb{R^n} \newline
+w = \begin{bmatrix}
+  a \\
+  b
+\end{bmatrix},\in \mathbb{R^2}
 ```
 
 
