@@ -96,7 +96,7 @@ A = \begin{bmatrix}
 w = \begin{bmatrix}
   a \\
   b
-\end{bmatrix},\in \mathbb{R^2}
+\end{bmatrix},\in \mathbb{R}^{2}
 ```
 
 
