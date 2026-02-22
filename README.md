@@ -32,7 +32,7 @@ Install miniconda using [following tutorial](https://www.anaconda.com/docs/getti
 In shell execute following command : `conda env create -f environment.yml`.
 
 
-### 2D Linear regression : search for maximum in bounded phase space  
+### 2D Linear regression : Least Square search for maximum in bounded phase space  
 
 **At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight.**
 
@@ -69,8 +69,29 @@ Limits of this approach :
 * Global maxima might be out of lattice subspace of $A \times B$, we have to "guess" good limits to search in phase space
 * Great chance that lattice resolutions over A and B are set such as best $(\hat{a}, \hat{b}) is not on one point of the lattice.
 
+Therefore this "quick and dirty" coded method isn't satisfying.
+
 ### Run the script
 Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
+Then run `python3 espace_des_phases.py`
+
+## 2D Linear regression : Vector projection over linear span space
+
+As reminder we have $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$. Which we can rewrite as :
+
+```math
+\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T = A \times w \\ 
+```
+```math
+A \in M_{(n,2)} ({\mathbb{R})) \newline
+```
+```math
+w \in \mathbb{R^n} \newline
+```
+
+
+Now let's write $E \in \mathbb{R^n}$ error vector such as $E = Y - \hat{Y}$.
+
 
 
 
