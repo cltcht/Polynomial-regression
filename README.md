@@ -12,7 +12,11 @@ For reminders and proof of algebra theorems used, please see [this website](http
 
 ## Python
 
-Set environment with :
+### Setting up environment
+---------------------------
+Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).
+
+In shell execute following command : `conda env create -f environment.yml`.
 
 
 First few scripts were done in Python.
