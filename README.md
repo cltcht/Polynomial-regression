@@ -36,7 +36,7 @@ In shell execute following command : `conda env create -f environment.yml`.
 
 **At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight.**
 
-Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R^n}\times\mathbb{R^n}$ be two set of $n$ real values.
+Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{n}\times\mathbb{R}^{n}$ be two set of $n$ real values.
 
 ```math
 X=(X_{k})_{1 \leq k \leq n} and Y=(Y_{k})_{1 \leq k \leq n}
@@ -100,7 +100,7 @@ w = \begin{bmatrix}
 ```
 
 
-Now let's write $E \in \mathbb{R^n}$ error vector such as $E = Y - \hat{Y}$.
+Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
 
 
 
