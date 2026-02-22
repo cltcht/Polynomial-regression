@@ -2,11 +2,14 @@
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
 ## Summary
-As personal project I wanted to study one mathematical problem along with differents programming languages.
-I begun with Python, see /Python repo for scripts and mathematics.
-Then I switched to C++, see /Cpp repo for scripts and mathematics. 
+As personal project I wanted to study one "simple" mathematical problem along with differents programming languages.
+I choosed polynomial regression. I've seen online multiple gradient/machine learning based approaches which I don't like.
+It feels like "using a bulldozer to crack an egg" while you can use more elegant linear-algebra based solutions.
 
-Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010).
+I begun with Python, see /Python repo for scripts.
+Then I switched to C++, see /Cpp repo for scripts. 
+
+Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010) for C++.
 For reminders and proofs of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html)
 
 ------------------------------
