@@ -7,16 +7,59 @@ I begun with Python see /Python repo for scripts and mathematics.
 Then I switched to Cpp. Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010).
 For reminders and proof of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html)
 
-** I might push some script using Rust ** 
+**I might push some script using Rust** 
 
 
 ## Python
+
+Set environment with :
+
+
 First few scripts were done in Python.
-At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight.
-### 2D Linear regression : global maximum of phase space  
+
+### 2D Linear regression : search for maximum in bounded phase space  
+
+**At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight.**
+
 Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R^n}\times\mathbb{R^n}$ be two set of $n$ real values.
-Let's rewrite $X = (X_k)_{1 \leqslant k \leqslant n} and Y = (Y_k)_{1 \leqslant k \leqslant n}$.
-Objective is to find $(a, b) \in \mathbb{R}\times\mathbb{R}$ such as an approximation $\hat{Y}(a, b, X)$ is as close as possible of $Y$.
-One usually uses $R^2$ defined as ${SS_mean - SS_fit}over{SS-mean}$ as fitting metrics with :\newline
-$SS_mean=\sum_{k=0}^{n} Y_k over n$ and $SS_fit=\sum_{k=0}^{n} \hat{Y_k} over n$
+
+```math
+X=(X_{k})_{1 \leq k \leq n} and Y=(Y_{k})_{1 \leq k \leq n}
+```
+
+Objective is to find $(a, b) \in \mathbb{R}\times\mathbb{R}$ such as a linear approximation $\hat{Y}$ is as close as possible of $Y$ :
+```math
+\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T
+```
+
+Let write the mean ${\sum_{k=1}^{n} }\over{n}$ as $\bar{Y}$ .  
+
+One usually maximises $R^2$ defined as ${SS_{mean} - SS_{fit}}\over{SS_{mean}}$ as fitting metrics with :
+
+```math
+{SS_{mean}} = {\sum_{k=1}^{n} {({Y}_k - \bar{Y})}^2\over{n}}
+```
+```math
+{SS_{fit}} = {\sum_{k=1}^{n} {(\hat{Y}_k - \bar{Y})}^2\over{n}}
+```
+
+Realistically, one just want to minimise ${SS_{fit}}$. Therefore our goal is to find a vector $(\hat{a}, \hat{b}) = argmin(\hat{Y}(a, b, X))$.
+
+Hypothesis, In order not to compute indefinitely :
+* One can set limits to the vector space that contains $(a, b)$. Let's call this bounded space $A \times B$
+* One can define a lattice subspace of $A \times B$ with definite resolution over $A$ and $B$.
+Meaning we will search for all existing $(a, b)$ over a definite lattice subspace of $A \times B$.
+
+Limits of this approach :
+* Global maxima might be out of lattice subspace of $A \times B$, we have to "guess" good limits to search in phase space
+* Great chance that lattice resolutions over A and B are set such as best $(\hat{a}, \hat{b}) is not on one point of the lattice.
+
+### Run the script
+Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
+
+
+
+
+
+
 
