@@ -3,14 +3,24 @@ Few scripts using different programming languages and approaches to tackle fitti
 
 ## Summary
 As personal project I wanted to study one mathematical problem along with differents programming languages.
-I begun with Python see /Python repo for scripts and mathematics.
-Then I switched to Cpp. Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010).
+I begun with Python, see /Python repo for scripts and mathematics.
+Then I switched to C++, see /Cpp repo for scripts and mathematics. 
+
+Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010).
 For reminders and proof of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html)
 
-**I might push some script using Rust** 
+------------------------------
+
+**I might push some script using Rust later** 
+
+----------------------------------
 
 
 ## Python
+
+First few scripts were done in Python...
+Few different approach were tried, they are summarized chronically.
+Going from "usual" 2D linear fit to 3D multivariate fit.
 
 ### Setting up environment
 
@@ -18,8 +28,6 @@ Install miniconda using [following tutorial](https://www.anaconda.com/docs/getti
 
 In shell execute following command : `conda env create -f environment.yml`.
 
-
-First few scripts were done in Python.
 
 ### 2D Linear regression : search for maximum in bounded phase space  
 
