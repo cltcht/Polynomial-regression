@@ -140,8 +140,18 @@ Therefore we can infer that $E$ is orthogonal to $col(A)$.
 
 Furthermore, 
 ```math
-$E$  \perp $col(A)$ \equival toto
+E \perp col(A) \Leftrightarrow E \in  col(A)^{\perp} \Leftrightarrow E \in  ker(A^{T})
 ```
+```math
+\text{Therefore : } A^{T} \times E = 0_{{\mathbb{R}^2}} \implies A^{T} \times Y = A^{T} \times \hat{Y}
+```
+```math
+  \implies A^{T} \times A \times w = A^{T} \times Y \implies
+```
+```math
+ w = (A^{T} A)^{-1} \times A^{T} \times Y
+```
+
 
 
 
