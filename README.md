@@ -154,9 +154,19 @@ Let $S$ be a subspace of $V$ of finite dimension $n$ and $(e_1, ..., e_n)$ a ort
 Let $x$ be a vector of $V$ ,
 Let be $p \in S$ the projection of $X$ on $S$ :
 ```math
-p = \sum_{k=1}^{n} {{< x ; e_i>}e_i}
+p = \sum_{k=1}^{n} {{< x ; e_i>}e_i} \text{,   (< . ; . > being the scalar product)}
 ```
 Now if we have a basis that's not orthonormal one can use the Graham-Schmidt algorithm to generate one.
+
+Back to our regression problem, the set of columns of $A$ is a basis *B*$=(A_1, A_2)$ of $col(A)$.
+Using the Graham-shmidt algorithm we can generate an orthogonal basis *B_{GS}*$=GS(A_1, A_2)=(e_1, e_2)$ for $col(A)$.
+
+One can therefore compute $Ŷ = \sum_{k=1}^{n} {{< Y ; e_i>}e_i}$ .
+
+Therefore we obtain a system $Ŷ = A.w$ and can inverse it using Gauss-pivot method.
+
+
+
 
 
 
