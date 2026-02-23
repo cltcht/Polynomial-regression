@@ -3,14 +3,17 @@ Few scripts using different programming languages and approaches to tackle fitti
 
 ## Summary
 As personal project I wanted to study one "simple" mathematical problem along with differents programming languages.
-I choosed polynomial regression. I've seen online multiple gradient/machine learning based approaches which I don't like.
-It feels like "using a bulldozer to crack an egg" while you can use more elegant linear-algebra based solutions.
+I choosed polynomial regression in order to fit a set of points.
 
-I begun with Python, see /Python repo for scripts.
-Then I switched to C++, see /Cpp repo for scripts. 
+I've seen online some ML based approaches which I don't like.
+It felt like "using a bulldozer to crack an egg" when one can find linear-algebra based solution which at least to me (AND in the case of "easy" fitting problems, eg. low dimension, low data volume) feels more elegant.
+
+I begun with Python, see `/Python` repo for scripts.
+Then I switched to C++, see `/Cpp` repo for scripts. 
 
 Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010) for C++.
-For reminders and proofs of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html)
+
+For reminders and proofs of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html).
 
 ------------------------------
 
@@ -23,23 +26,24 @@ For reminders and proofs of algebra theorems used, please see [this website](htt
 
 First few scripts were done in Python...
 Few different approach were tried, they are summarized chronically.
-Going from "usual" 2D linear fit to 3D multivariate fit.
+Going from "usual" linear fit to multivariate fit.
 
-### Setting up environment
+### 0 - Setting up environment
 
 Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).
 
 In shell execute following command : `conda env create -f environment.yml`.
 
 
-### 2D Linear regression : Least Square search for maximum in bounded phase space  
+### 1 - 2D Linear regression naive approach : Least Square maxima search in bounded phase space  
 
-**At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight.**
+**Note : At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight. So this solution isn't optimal at all.
+In short the idea is to scan parameters subspace to find the best set of parameters.**
 
 Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{n}\times\mathbb{R}^{n}$ be two set of $n$ real values.
 
 ```math
-X=(X_{k})_{1 \leq k \leq n} and Y=(Y_{k})_{1 \leq k \leq n}
+\text{Rewrite : } X=(X_{k})_{1 \leq k \leq n} \text{ and }  Y=(Y_{k})_{1 \leq k \leq n}
 ```
 
 Objective is to find $(a, b) \in \mathbb{R}\times\mathbb{R}$ such as a linear approximation $\hat{Y}$ is as close as possible of $Y$ :
@@ -47,15 +51,15 @@ Objective is to find $(a, b) \in \mathbb{R}\times\mathbb{R}$ such as a linear ap
 \hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T
 ```
 
-Let write the mean ${\sum_{k=1}^{n} Y_{k} }\over{n}$ as $\bar{Y}$ .  
+Let's write the mean ${\sum_{k=1}^{n} Y_{k} }\over{n}$ as : $\bar{Y}$ .  
 
 One usually maximises $R^2$ defined as ${SS_{mean} - SS_{fit}}\over{SS_{mean}}$ as fitting metrics with :
 
 ```math
-{SS_{mean}} = {\sum_{k=1}^{n} {({Y}_k - \bar{Y})}^2\over{n}}
+{SS_{mean}} = {\sum_{k=1}^{n} {({Y}_k - \bar{Y})}^2}
 ```
 ```math
-{SS_{fit}} = {\sum_{k=1}^{n} {(\hat{Y}_k - \bar{Y})}^2\over{n}}
+{SS_{fit}} = {\sum_{k=1}^{n} {(\hat{Y}_k - \bar{Y})}^2}
 ```
 
 Realistically, one just want to minimise ${SS_{fit}}$. Therefore our goal is to find a vector $(\hat{a}, \hat{b}) = argmin({SS_{fit}}(a, b, X))$.
@@ -67,9 +71,13 @@ Meaning we will search for all existing $(a, b)$ over a definite lattice subspac
 
 Limits of this approach :
 * Global maxima might be out of lattice subspace of $A \times B$, we have to "guess" good limits to search in phase space
-* Great chance that lattice resolutions over A and B are set such as best $(\hat{a}, \hat{b}) is not on one point of the lattice.
+* Great chance that lattice resolutions over A and B are set such as best $(\hat{a}, \hat{b})$ is not on one point of the lattice.
 
-Therefore this "quick and dirty" coded method isn't satisfying.
+### Conclusion
+Therefore this "overnight thought" method isn't satisfying : 
+
+If the best parameters exist in the limited subspace, there's a great chance than one can only have an approximation of it. 
+For the next approach let introduce some linear-algebra.
 
 ### Run the script
 Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
@@ -98,9 +106,44 @@ w = \begin{bmatrix}
   b
 \end{bmatrix},\in \mathbb{R}^{2}
 ```
+Reminder: $A$ is a nx2 matrix.
 
+Let's write $(A_{i})_{1 \leq i \leq 2}$ the columns of A. Here, $A_1 = X and A_2 = (1, ..., 1)^T$ .
+One can define $col(A)$ a subspace of ${\mathbb{R}^n}$ as the space of vectors generated by the columns of $A$ : $(A1, A2)$ .
+
+Let be a vector $v \in col(A)$, therefore $\exists (t_1, t_2) \in {\mathbb{R}^2} | v = {t_1 \times A_1} + {t_2 \times A_2}$ .
+
+Remark : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
 
 Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
+
+### Discussion about the error vector
+Two cases exist : either $E$ is the null vector or not.
+
+1) Supposing $E$ is the null vector:
+
+Therefore we have $Y = \hat{Y} = A \times w \in col(A)$.
+Meaning all our points $(X_i ; Y_i), i \leq n$ are perfectly alligned on a slope.
+
+It also means $Y$ is also located in col(A).
+But generally it isn't the case : $(X, Y)$ might be some measurments with it physical effects (noise, accuracy, precision).
+
+
+2)  Supposing $E$ isn't the null vector:
+
+$Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y} is in $col(A)$.
+The best fit $\hat{Y}$ we can have will be the one minimizing $E$ i.e. one want $E$ as short as possible.
+
+Remark : The shortest path between one point and a space is the orthogonal projection.
+
+Therefore we can infer that $E$ is orthogonal to $col(A)$.
+
+Furthermore, 
+```math
+$E$  \perp $col(A)$ \equival toto
+```
+
+
 
 
 
