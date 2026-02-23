@@ -2,7 +2,7 @@
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
 ## Summary
-As personal project I wanted to study one "simple" mathematical problem along with differents programming languages.
+As personal project I wanted to play with one "simple" mathematical problem along with differents programming languages.
 I choosed polynomial regression in order to fit a set of points.
 
 I've seen online some ML based approaches which I don't like.
@@ -21,21 +21,12 @@ For reminders and proofs of algebra theorems used, please see [this website](htt
 
 ----------------------------------
 
+## A) Discusion on regression
 
-## Python
+In this paragraph I will discuss different approaches for regression problems to put all the mathematics in one place.
+All the mathematical approaches are linked to scripts, see paragraph **B)** to run them.
 
-First few scripts were done in Python...
-Few different approach were tried, they are summarized chronically.
-Going from "usual" linear fit to multivariate fit.
-
-### 0 - Setting up environment
-
-Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).
-
-In shell execute following command : `conda env create -f environment.yml`.
-
-
-### 1 - 2D Linear regression naive approach : Least Square maxima search in bounded phase space  
+### 1 - 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space  
 
 **Note : At first I decided to go from scratch and have zero look online and just give it a try in the morning with what I thought overnight. So this solution isn't optimal at all.
 In short the idea is to scan parameters subspace to find the best set of parameters.**
@@ -73,19 +64,15 @@ Limits of this approach :
 * Global maxima might be out of lattice subspace of $A \times B$, we have to "guess" good limits to search in phase space
 * Great chance that lattice resolutions over A and B are set such as best $(\hat{a}, \hat{b})$ is not on one point of the lattice.
 
-### Conclusion
+**Conclusion**
 Therefore this "overnight thought" method isn't satisfying : 
-
 If the best parameters exist in the limited subspace, there's a great chance than one can only have an approximation of it. 
-For the next approach let introduce some linear-algebra.
+For the next approach let's introduce a bit of linear-algebra !
 
-### Run the script
-Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
-Then run `python3 espace_des_phases.py`
 
-## 2D Linear regression : Vector projection over linear span space
+### 2 - 2D Linear regression : Vector projection over linear span space
 
-As reminder we have $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$. Which we can rewrite as :
+As reminder we have $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$. Which we can rewrite by vector-matrix multiplication :
 
 ```math
 \hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T = A \times w
@@ -117,7 +104,7 @@ Remark : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
 
 Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
 
-### Discussion about the error vector
+**Discussion about the error vector** 
 Two cases exist : either $E$ is the null vector or not.
 
 1) Supposing $E$ is the null vector:
@@ -131,7 +118,7 @@ But generally it isn't the case : $(X, Y)$ might be some measurments with it phy
 
 2)  Supposing $E$ isn't the null vector:
 
-$Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y} is in $col(A)$.
+$Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y}$ is in $col(A)$.
 The best fit $\hat{Y}$ we can have will be the one minimizing $E$ i.e. one want $E$ as short as possible.
 
 Remark : The shortest path between one point and a space is the orthogonal projection.
@@ -151,6 +138,60 @@ E \perp col(A) \Leftrightarrow E \in  col(A)^{\perp} \Leftrightarrow E \in  ker(
 ```math
  w = (A^{T} A)^{-1} \times A^{T} \times Y
 ```
+
+**But ... Projection and Graham-Schmidt algorithm !**
+
+Previous result is also valid for polynomial regression (not only linear) if you add more columns to $A$, see next paragraphs.
+Before implementing the previous result, I would like to study further this linear case by using another solution.
+
+One might use the multiplication of $(A^{T} A)^{-1} \times A^{T}$ to find the best parameters.
+
+But as we said, it's all about orthogonal projection of $Y$ over $col(A)$.
+Let's discuss a bit about projection and basis orthogonality.
+
+Suppose we got a vectorial space $V$ of finite dimension $m$ .
+Let $S$ be a subspace of $V$ of finite dimension $n$ and $(e_1, ..., e_n)$ a orthonormed basis of $S$ ,
+Let $x$ be a vector of $V$ ,
+Let be $p \in S$ the projection of $X$ on $S$ :
+```math
+p = \sum_{k=1}^{n} {{< x ; e_i>}e_i}
+```
+Now if we have a basis that's not orthonormal one can use the Graham-Schmidt algorithm to generate one.
+
+
+
+
+
+
+
+
+
+
+
+## Python
+
+First few scripts were done in Python...
+Few different approach were tried, they are summarized chronically.
+Going from "usual" linear fit to multivariate fit.
+
+
+
+############################################
+
+### 0 - Setting up environment
+
+Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).
+
+In shell execute following command : `conda env create -f environment.yml`.
+
+
+
+
+
+
+**Run the script**
+Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
+Then run `python3 espace_des_phases.py`
 
 
 
