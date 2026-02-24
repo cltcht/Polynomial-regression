@@ -100,14 +100,15 @@ One can define $col(A)$ a subspace of ${\mathbb{R}^n}$ as the space of vectors g
 
 Let be a vector $v \in col(A)$, therefore $\exists (t_1, t_2) \in {\mathbb{R}^2} | v = {t_1 \times A_1} + {t_2 \times A_2}$ .
 
-Remark : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
+**Remark** : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
 
 Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
 
 **Discussion about the error vector** 
-Two cases exist : either $E$ is the null vector or not.
 
-1) Supposing $E$ is the null vector:
+Two cases exist : *either $E$ is the null vector or not.*
+
+1) *Supposing $E$ is the null vector*:
 
 Therefore we have $Y = \hat{Y} = A \times w \in col(A)$.
 Meaning all our points $(X_i ; Y_i), i \leq n$ are perfectly alligned on a slope.
@@ -116,12 +117,12 @@ It also means $Y$ is also located in col(A).
 But generally it isn't the case : $(X, Y)$ might be some measurments with it physical effects (noise, accuracy, precision).
 
 
-2)  Supposing $E$ isn't the null vector:
+2)  *Supposing $E$ isn't the null vector*:
 
 $Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y}$ is in $col(A)$.
 The best fit $\hat{Y}$ we can have will be the one minimizing $E$ i.e. one want $E$ as short as possible.
 
-Remark : The shortest path between one point and a space is the orthogonal projection.
+**Remark** : The shortest path between one point and a space is the orthogonal projection.
 
 Therefore we can infer that $E$ is orthogonal to $col(A)$.
 
@@ -133,10 +134,10 @@ E \perp col(A) \Leftrightarrow E \in  col(A)^{\perp} \Leftrightarrow E \in  ker(
 \text{Therefore : } A^{T} \times E = 0_{{\mathbb{R}^2}} \implies A^{T} \times Y = A^{T} \times \hat{Y}
 ```
 ```math
-  \implies A^{T} \times A \times w = A^{T} \times Y \implies
+  \implies A^{T} \times A \times w = A^{T} \times Y 
 ```
 ```math
- w = (A^{T} A)^{-1} \times A^{T} \times Y
+\implies w = (A^{T} A)^{-1} \times A^{T} \times Y
 ```
 
 **But ... Projection and Graham-Schmidt algorithm !**
@@ -158,12 +159,70 @@ p = \sum_{k=1}^{n} {{< x ; e_i>}e_i} \text{,   (< . ; . > being the scalar produ
 ```
 Now if we have a basis that's not orthonormal one can use the Graham-Schmidt algorithm to generate one.
 
-Back to our regression problem, the set of columns of $A$ is a basis *B*$=(A_1, A_2)$ of $col(A)$.
-Using the Graham-shmidt algorithm we can generate an orthogonal basis *B_{GS}*$=GS(A_1, A_2)=(e_1, e_2)$ for $col(A)$.
+**Remark** : The Graham-Schmidt algorithm behavior generate a basis $(u_1, ... ,u_p)$ from a basis $(a_1, ..., a_p) \in {\mathbb{R}^n}$
+Let's normalise the generated basis by $(q_1, ..., q_p) = (u_1, ..., u_p)$ ,  $q_j$ =  ${ u_j \over \Vert u_j \Vert }$ , $1 \leq j \leq p $  
+Let Q be a matrix whose column are the vectors of the generated basis : $Q = [q_1, ..., q_p]$  
+Let write every vector $(a_1, ..., a_p)$ in the $(q1, ..., q_p)$ basis with $r_ij$ coefficients :  
+For every $1 \leq j \leq p$ : $a_j$ = $\sum_{i=1}^{p} {{r_ij}.q_i}$ , $ r_ij$ = $< q_i ; a_j >$  
+But as every vector $u_j$ is a linear composition of $(a1, ..., a_j)$ : $(a_{j+1}, ..., a_p)$ aren't involved.  
+Therefore, $j \lt i \implies r_{ij}  = 0$ such as matrix $R = (r_{ij})_{1 \leq i,j \leq p}$ is triangular.  
+We can therefore write $A = Q.R$
+  
+Back to our regression problem, generalizing fitting with a $(d-1)$ polynomial with $n$-points vectors $(\hat{Y}, Y, X)$:
+```math
+\hat{Y} = Q.R.w \implies Q^T.\hat{Y} = R.w \text{ as by orthogonality } Q^T.Q = I_{d}.
+```
+Therefore we obtain an "easy to solve" triangular system $Q^T.\hat{Y} = R.w$ :  
 
-One can therefore compute $Ŷ = \sum_{k=1}^{n} {{< Y ; e_i>}e_i}$ .
+```math
+\begin{bmatrix}
+  r_{11} & r_{12} & r_{13} & ... & r_{1p} \\
+  0 & r_{22} & r_{23} & ... & r_{2p} \\
+ 0 & 0 & r_{33}... & r_{2p} \\
+  \vdots & &  & \vdots \\
+  0 & 0 & ... & r_{pp}
+\end{bmatrix} \times
+\begin{bmatrix}
+w{1} \\
+\vdots \\
+w{p}
+\end{bmatrix} =
+\begin{bmatrix}
+\rule[.5ex]{2.5ex}{0.5pt} & q_1^T & \rule[.5ex]{2.5ex}{0.5pt} \\
+ & \vdots &  \\
+\rule[.5ex]{2.5ex}{0.5pt} & q_p^T & \rule[.5ex]{2.5ex}{0.5pt}
+\end{bmatrix} \times
+\hat{Y}
+```  
 
-Therefore we obtain a system $Ŷ = A.w$ and can inverse it using Gauss-pivot method.
+In the end you can apply this pseudo-code algorithm to retrieve $w$ vector :  
+
+----
+*For j from p to 1 with step = -1 :*
+```math
+w_{i} = {{< \hat{Y} ; q_i> - \sum_{j = i+1}^{p}{r_{ij}.w_{j}}} \over {r_ii}}
+```
+----  
+
+**Now** let's go back to our simple linear (aka degre one polynomial) $\hat{Y} = aX + b(1, ...,1)^T$:  
+The columns of $A$ form a basis *B*$=(A_1, A_2)$ of $col(A)$.  
+Using the Graham-shmidt algorithm we can obtain an orthogonal basis (which we norm) $B_{GS}=GS(A_1, A_2)=(q_1, q_2)$ for $col(A)$.
+We can define $Q$ and $R$ matrix as explained before and write :  
+```math
+\begin{bmatrix}
+  r_{11} & r_{12} \\
+  0 & r_{22} 
+\end{bmatrix} \times
+\begin{bmatrix}
+a \\
+b
+\end{bmatrix} =
+\begin{bmatrix}
+\rule[.5ex]{2.5ex}{0.5pt} & q_1^T & \rule[.5ex]{2.5ex}{0.5pt} \\
+\rule[.5ex]{2.5ex}{0.5pt} & q_2^T & \rule[.5ex]{2.5ex}{0.5pt}  
+\end{bmatrix} \times
+\hat{Y}
+```  
 
 
 
