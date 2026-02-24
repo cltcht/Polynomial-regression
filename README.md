@@ -267,7 +267,7 @@ w = \begin{bmatrix}
   p_d \\
 \end{bmatrix},\in \mathbb{R}^{d}
 ```  
-The processus thought in **§2** : $ E \in  col(A)^{\perp} \Leftrightarrow \in ker(A^T) \implies w = {(A^T.A)^{-1}}A.Y$ is still valid.
+The processus thought in **§2** : $E \in  col(A)^{\perp} \Leftrightarrow \in ker(A^T) \implies w = {(A^T.A)^{-1}}A.Y$ is still valid.
 
 
 
