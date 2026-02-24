@@ -249,7 +249,10 @@ w = \begin{bmatrix}
 \end{bmatrix},\in \mathbb{R}^{2}
 ```  
 
-Let's upgrade the problem to fitting with a d-degree polynome $\hat{Y} = P(X)& with &P(X) = \sum_{k=0}^{d} {{p_k}.X^k}$ :
+Let's upgrade the problem to fitting with a d-degree polynome $\hat{Y} = P(X)& with 
+
+&P(X) = \sum_{k=0}^{d} {{p_k}.X^k}$ :
+
 ```math
 A = \begin{bmatrix}
   {X_1}^d & ... & {X_1}^0 \\
