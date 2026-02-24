@@ -225,9 +225,48 @@ b
 ```  
 
 
+### 3 - Polynomial regression : Matrix inversion method
 
+So, in **§2** we played a bit with Graham-Schmidt algorithm. But the easiest to get the $w$ vector is definitelly to use matrix inversion method (also discussed in **§2**).
 
+Let's do that !  
 
+**Note** :  
+For the moment we defined for linear fit the following :  
+```math
+A = \begin{bmatrix}
+  X_1 & 1 \\
+  X_2 & 1\\
+  \vdots \\
+  X_n & 1
+\end{bmatrix}, \in M_{(n,2)} ({\mathbb{R}}),
+```
+
+```math
+w = \begin{bmatrix}
+  a \\
+  b
+\end{bmatrix},\in \mathbb{R}^{2}
+```  
+
+Let's upgrade the problem to fitting with a d-degree polynome $\hat{Y} = P(X)& with &P(X) = \sum_{k=0}^{d} {{p_k}.X^k} :
+```math
+A = \begin{bmatrix}
+  {X_1}^d & {X_1}^0 \\
+  {X_2}^d & {X_2}^0\\
+  \vdots \\
+  {X_n}^d & {X_n}^0
+\end{bmatrix}, \in M_{(n,d)} ({\mathbb{R}}),
+```
+
+```math
+w = \begin{bmatrix}
+  p_0 \\
+  \vdots \\
+  p_d \\
+\end{bmatrix},\in \mathbb{R}^{d}
+```  
+The processus thought in **§2** : $ E \in  col(A)^{\perp} \Leftrightarrow \in ker(A^T) \implies w = {(A^T.A)^{-1}}A.Y is still valid.
 
 
 
