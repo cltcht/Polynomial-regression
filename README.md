@@ -168,7 +168,7 @@ But as every vector $u_j$ is a linear composition of $(a1, ..., a_j)$ : $(a_{j+1
 Therefore, $j \lt i \implies r_{ij}  = 0$ such as matrix $R = (r_{ij})_{1 \leq i,j \leq p}$ is triangular.  
 We can therefore write $A = Q.R$
   
-Back to our regression problem, generalizing fitting with a $(d-1)$ polynomial with $n$-points vectors $(\hat{Y}, Y, X)$:
+Back to our regression problem, generalizing fitting with a $p-degree$ polynom with $n$-points vectors $(\hat{Y}, Y, X)$:
 ```math
 \hat{Y} = Q.R.w \implies Q^T.\hat{Y} = R.w \text{ as by orthogonality } Q^T.Q = I_{d}.
 ```
