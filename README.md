@@ -108,7 +108,7 @@ Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
 
 Two cases exist : *either $E$ is the null vector or not.*
 
-1) *Supposing $E$ is the null vector*:
+1) *Supposing* $E$ *is the null vector*:
 
 Therefore we have $Y = \hat{Y} = A \times w \in col(A)$.
 Meaning all our points $(X_i ; Y_i), i \leq n$ are perfectly alligned on a slope.
@@ -117,7 +117,7 @@ It also means $Y$ is also located in col(A).
 But generally it isn't the case : $(X, Y)$ might be some measurments with it physical effects (noise, accuracy, precision).
 
 
-2)  *Supposing $E$ isn't the null vector*:
+2)  *Supposing* $E$ *isn't the null vector*:
 
 $Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y}$ is in $col(A)$.
 The best fit $\hat{Y}$ we can have will be the one minimizing $E$ i.e. one want $E$ as short as possible.
