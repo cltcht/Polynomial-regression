@@ -162,7 +162,7 @@ Now if we have a basis that's not orthonormal one can use the Graham-Schmidt alg
 **Remark** : The Graham-Schmidt algorithm behavior generate a basis $(u_1, ... ,u_p)$ from a basis $(a_1, ..., a_p) \in {\mathbb{R}^n}$
 Let's normalise the generated basis by $(q_1, ..., q_p) = (u_1, ..., u_p)$ ,  $q_j$ =  ${ u_j \over \Vert u_j \Vert }$ , $1 \leq j \leq p $  
 Let Q be a matrix whose column are the vectors of the generated basis : $Q = [q_1, ..., q_p]$  
-Let write every vector $(a_1, ..., a_p)$ in the $(q1, ..., q_p)$ basis with $r_ij$ coefficients :  
+Let write every vector $(a_1, ..., a_p)$ in the $(q_1, ..., q_p)$ basis with $r_{ij}$ coefficients :  
 For every $1 \leq j \leq p$ : $a_j$ = $\sum_{i=1}^{p} {{r_ij}.q_i}$ , $ r_ij$ = $< q_i ; a_j >$  
 But as every vector $u_j$ is a linear composition of $(a1, ..., a_j)$ : $(a_{j+1}, ..., a_p)$ aren't involved.  
 Therefore, $j \lt i \implies r_{ij}  = 0$ such as matrix $R = (r_{ij})_{1 \leq i,j \leq p}$ is triangular.  
