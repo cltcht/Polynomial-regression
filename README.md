@@ -321,11 +321,11 @@ A = \begin{bmatrix}
   {X_{1}} & {Y_{2}} & 1 \\
   \vdots \\
   {X_{1}} & {Y_{n}} & 1 \\
-  \vert \\
+  \dashedline \\
   {X_{2}} & {Y_{1}} & 1 \\
   \vdots \\
   {X_{2}} & {Y_{n}} & 1 \\
-  \vert \\
+  \dashedline \\
   \vdots \\
   {X_{m}} & {Y_{n}} & 1 
   \end{bmatrix}
