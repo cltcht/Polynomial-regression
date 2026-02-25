@@ -279,7 +279,7 @@ Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{n}\times\mathbb{R}^{m}$ be two s
 ```
 Let be $P_{x}$ and $P_{y}$ two $d_x$ and $d_y$ polynomials.  
 
-Now w define a discrete real field (Z_{i,j})_{({1 \leq k \leq n}, {1 \leq j \leq m})} such as :
+Now w define a discrete real field $(Z_{i,j})_{({1 \leq k \leq n}, {1 \leq j \leq m})}$ such as :
 ```math
 {1 \leq k \leq n}, {1 \leq j \leq m} : Z_{ij} = P_{x}({X_{i}}) + P_{y}({Y_{j}})
 ```
