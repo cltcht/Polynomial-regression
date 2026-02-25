@@ -285,14 +285,14 @@ We want to make a regression with two polynomials $P_{x}$ and $P_{y}$ of degrees
 {1 \leq k \leq n}, {1 \leq j \leq m}\text{ : } \hat{Z}_{ij} = P_{x}({X_{j}}) + P_{y}({Y_{i}})
 ```
 ```math
-P_{x} and P_{y} minimize E = Z - Ẑ
+P_{x} \text{ and } P_{y} \text{ minimize } E = Z - \hat{Z}
 ```
 ```math
 Z = \begin{bmatrix}
-  {Z_11}^d & ... & {Z_1m}^0 \\
-  {X_21}^d & ... & {X_2m}^0\\
+  {Z_{11}} & ... & {Z_{1m}} \\
+  {X_{21}} & ... & {X_{2m}}\\
   \vdots \\
-  {Z_n1}^d & ... & {X_nm}^0
+  {Z_{n1}} & ... & {Z_{nm}}
 \end{bmatrix}, \in M_{(n,m)} ({\mathbb{R}}),
 ```
 
