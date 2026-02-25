@@ -273,16 +273,32 @@ The processus thought in **§2** : $E \in  col(A)^{\perp} \Leftrightarrow \in ke
 ### 4 - (X, Y) Multivariate polynomial regression : Matrix inversion method
 
 Let's add a dimension to our problem : 
-Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{n}\times\mathbb{R}^{m}$ be two sets of real values.  
+Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{m}\times\mathbb{R}^{n}$ be two sets of real values.  
 ```math
-\text{Rewrite : } X=(X_{i})_{1 \leq i \leq n} \text{ and }  Y=(Y_{j})_{1 \leq j \leq m}  
+\text{Rewrite : } X=(X_{j})_{1 \leq j \leq m} \text{ and }  Y=(Y_{i})_{1 \leq i \leq n}  
 ```
-Let be $P_{x}$ and $P_{y}$ two $d_x$ and $d_y$ polynomials.  
 
-Now w define a discrete real field $(Z_{i,j})_{({1 \leq k \leq n}, {1 \leq j \leq m})}$ such as :
+Now w define a discrete real field $(Z_{i,j})_{({1 \leq i \leq n}, {1 \leq j \leq m})}$.
+
+We want to make a regression with two polynomials $P_{x}$ and $P_{y}$ of degrees $d_x$ and $d_y$ such as :  
 ```math
-{1 \leq k \leq n}, {1 \leq j \leq m} : Z_{ij} = P_{x}({X_{i}}) + P_{y}({Y_{j}})
+{1 \leq k \leq n}, {1 \leq j \leq m}\text{ : } \hat{Z}_{ij} = P_{x}({X_{j}}) + P_{y}({Y_{i}})
 ```
+```math
+P_{x} and P_{y} minimize E = Z - Ẑ
+```
+```math
+Z = \begin{bmatrix}
+  {Z_11}^d & ... & {Z_1m}^0 \\
+  {X_21}^d & ... & {X_2m}^0\\
+  \vdots \\
+  {Z_n1}^d & ... & {X_nm}^0
+\end{bmatrix}, \in M_{(n,m)} ({\mathbb{R}}),
+```
+
+
+
+
 
 
 
