@@ -294,14 +294,28 @@ Install miniconda using [following tutorial](https://www.anaconda.com/docs/getti
 In shell execute following command : `conda env create -f environment.yml`.
 
 
-
-
-
+### 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space 
 
 **Run the script**
 Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
 Then run `python3 espace_des_phases.py`
 
+### 2 - 2D Linear regression : Vector projection over linear span space
+
+**Run the script**
+Modify hardcoded values for :
+* (int) s : X, Y samples number
+* (int) d : degree of polynomial fit (1 by default) -> coefficients are random
+Then run `Linear_regression_MSE_vector_projection.py`
+
+### 3 - Polynomial regression : Matrix inversion method
+
+**Run the script**
+Modify hardcoded values for :
+* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on your
+* (float) xmin, xmax : minimum value for x, maximum value for x
+* (int) nb : number of samples
+Then run `Linear_regression_MSE_matrix_inversion.py`
 
 
 
