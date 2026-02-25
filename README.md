@@ -298,7 +298,7 @@ Z = \begin{bmatrix}
 ```math
 \hat{Z}_{ij} = P_{x}({X_{j}}) + P_{y}({Y_{i}}) = \sum_{j=0}^{d_x}{p_{x,j}.X^j} + \sum_{i=0}^{d_y}{p_{y,i}.Y^k}
 ```
-One can define a bijection f from  M_{(n,m)} ${\mathbb{R}}$ to ${\mathbb{R}}^{nxm}$ such as :
+Let f be a bijection from  $M_{(n,m)}({\mathbb{R}})$ to ${\mathbb{R}}^{nxm}$ such as :
 ```math
 f(Z) = \begin{bmatrix}
   {Z_{11}} \\
@@ -314,6 +314,23 @@ f(Z) = \begin{bmatrix}
    {Z_{nm}}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
+One can define a matrix $A$ :
+```math
+A = \begin{bmatrix}
+  {X_{1}} & {Y_{1}} & 1 \\
+  {X_{1}} & {Y_{2}} & 1 \\
+  \vdots \\
+  {X_{1}} & {Y_{n}} & 1 \\
+  \vert \\
+  {X_{2}} & {Y_{1}} & 1 \\
+  \vdots \\
+  {X_{2}} & {Y_{n}} & 1 \\
+  \vert \\
+  \vdots \\
+  {X_{m}} & {Y_{n}} & 1 
+  \end{bmatrix}
+```
+
 
 
 
