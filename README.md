@@ -277,7 +277,7 @@ The processus thought in **§2** : $E \in  col(A)^{\perp} \Leftrightarrow \in ke
 
 
 
-## Python
+## B) Python
 
 First few scripts were done in Python...
 Few different approach were tried, they are summarized chronically.
@@ -294,13 +294,19 @@ Install miniconda using [following tutorial](https://www.anaconda.com/docs/getti
 In shell execute following command : `conda env create -f environment.yml`.
 
 
-### 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space 
+### 1 - 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space 
+
+Script that run a MSE resolution approach described in **§A).1** 
+(Unefficient one - just a try - you can skip it)
 
 **Run the script**
-Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.
+Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.  
 Then run `python3 espace_des_phases.py`
 
 ### 2 - 2D Linear regression : Vector projection over linear span space
+
+Script Script that run a Linear regression approach described in **§A).2**.
+Yet, it has been modified to fit with polynomes of higher degree.
 
 **Run the script**
 Modify hardcoded values for :
@@ -309,6 +315,8 @@ Modify hardcoded values for :
 Then run `Linear_regression_MSE_vector_projection.py`
 
 ### 3 - Polynomial regression : Matrix inversion method
+
+Script Script that run a Polynomial regression approach described in **§A).3**.
 
 **Run the script**
 Modify hardcoded values for :
