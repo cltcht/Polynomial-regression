@@ -163,10 +163,10 @@ Now if we have a basis that's not orthonormal one can use the Graham-Schmidt alg
 Let's normalise the generated basis by $(q_1, ..., q_p) = (u_1, ..., u_p)$ ,  $q_j$ =  ${ u_j \over \Vert u_j \Vert }$ , $1 \leq j \leq p $  
 Let Q be a matrix whose column are the vectors of the generated basis : $Q = [q_1, ..., q_p]$  
 Let write every vector $(a_1, ..., a_p)$ in the $(q_1, ..., q_p)$ basis with $r_{ij}$ coefficients :  
-For every $1 \leq j \leq p$ : $a_j$ = $\sum_{i=1}^{p} {{r_ij}.q_i}$ , $ r_ij$ = $< q_i ; a_j >$  
+For every $1 \leq j \leq p$ : $a_{j}$ = $\sum_{i=1}^{p} {{r_{ij}}.q_{i}}$ , $ r_{ij}$ = $< q_{i} ; a_{j} >$  
 But as every vector $u_j$ is a linear composition of $(a1, ..., a_j)$ : $(a_{j+1}, ..., a_p)$ aren't involved.  
 Therefore, $j \lt i \implies r_{ij}  = 0$ such as matrix $R = (r_{ij})_{1 \leq i,j \leq p}$ is triangular.  
-We can therefore write $A = Q.R$
+We can therefore write $A = Q.R$  
   
 Back to our regression problem, generalizing fitting with a $p-degree$ polynom with $n$-points vectors $(\hat{Y}, Y, X)$:
 ```math
@@ -270,7 +270,19 @@ w = \begin{bmatrix}
 The processus thought in **§2** : $E \in  col(A)^{\perp} \Leftrightarrow \in ker(A^T) \implies w = {(A^T.A)^{-1}}A.Y$ is still valid.
 
 
+### 4 - (X, Y) Multivariate polynomial regression : Matrix inversion method
 
+Let's add a dimension to our problem : 
+Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{n}\times\mathbb{R}^{m}$ be two sets of real values.  
+```math
+\text{Rewrite : } X=(X_{i})_{1 \leq i \leq n} \text{ and }  Y=(Y_{j})_{1 \leq j \leq m}  
+```
+Let be $P_{x}$ and $P_{y}$ two $d_x$ and $d_y$ polynomials.  
+
+Now w define a discrete real field (Z_{i,j})_{({1 \leq k \leq n}, {1 \leq j \leq m})} such as :
+```math
+{1 \leq k \leq n}, {1 \leq j \leq m} : Z_{ij} = P_{x}({X_{i}}) + P_{y}({Y_{j}})
+```
 
 
 
