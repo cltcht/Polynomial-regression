@@ -290,10 +290,29 @@ P_{x} \text{ and } P_{y} \text{ minimize } E = Z - \hat{Z}
 ```math
 Z = \begin{bmatrix}
   {Z_{11}} & ... & {Z_{1m}} \\
-  {X_{21}} & ... & {X_{2m}}\\
+  {Z_{21}} & ... & {X_{2m}}\\
   \vdots \\
   {Z_{n1}} & ... & {Z_{nm}}
 \end{bmatrix}, \in M_{(n,m)} ({\mathbb{R}}),
+```
+```math
+\hat{Z}_{ij} = P_{x}({X_{j}}) + P_{y}({Y_{i}}) = \sum_{j=0}^{d_x}{p_{x,j}.X^j} + \sum_{i=0}^{d_y}{p_{y,i}.Y^k}
+```
+One can define a bijection f from  M_{(n,m)} ${\mathbb{R}}$ to ${\mathbb{R}}^{nxm}$ such as :
+```math
+f(Z) = \begin{bmatrix}
+  {Z_{11}} \\
+  {Z_{21}} \\
+  \vdots \\
+  {Z_{n1}} \\
+  {Z_{12}} \\
+  \vdots \\
+  {Z_{n2}} \\
+   \vdots \\
+   {Z_{1m}} \\
+   \vdots \\
+   {Z_{nm}}
+\end{bmatrix}, \in {\mathbb{R}}),
 ```
 
 
