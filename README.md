@@ -315,7 +315,7 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-```math
+$$
 A =
 \left[
 \begin{array}{ccc}
@@ -331,8 +331,7 @@ A =
   \vdots & \vdots & \vdots \\
   X_{m} & Y_{n} & 1
 \end{array}
-
-```
+$$
 
 
 
