@@ -72,7 +72,9 @@ For the next approach let's introduce a bit of linear-algebra !
 
 ### 2 - 2D Linear regression : Vector projection over linear span space
 
-As reminder we have $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$. Which we can rewrite by vector-matrix multiplication :
+>**Reminder** $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$.
+
+Which we can rewrite by vector-matrix multiplication :
 
 ```math
 \hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T = A \times w
@@ -93,14 +95,14 @@ w = \begin{bmatrix}
   b
 \end{bmatrix},\in \mathbb{R}^{2}
 ```
-Reminder: $A$ is a nx2 matrix.
+>**Reminder**: $A$ is a nx2 matrix.
 
 Let's write $(A_{i})_{1 \leq i \leq 2}$ the columns of A. Here, $A_1 = X and A_2 = (1, ..., 1)^T$ .
 One can define $col(A)$ a subspace of ${\mathbb{R}^n}$ as the set of all finite linear combinations of elements $A$ : $(A1, A2)$ .
 
 Let be a vector $v \in col(A)$, therefore $\exists (t_1, t_2) \in {\mathbb{R}^2} | v = {t_1 \times A_1} + {t_2 \times A_2}$ .
 
-**Remark** : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
+>**Remark** : $\hat{Y}$ can be written as $A \times w \implies \hat{Y} \in col(A)$ .
 
 Now let's write $E \in \mathbb{R}^{n}$ error vector such as $E = Y - \hat{Y}$.
 
@@ -122,7 +124,7 @@ But generally it isn't the case : $(X, Y)$ might be some measurments with it phy
 $Y$ is a vector in ${\mathbb{R}^n}$ out of sub-space $col(A)$ and $\hat{Y}$ is in $col(A)$.
 The best fit $\hat{Y}$ we can have will be the one minimizing $E$ i.e. one want $E$ as short as possible.
 
-**Remark** : The shortest path between one point and a space is the orthogonal projection.
+>**Remark** : The shortest path between one point and a space is the orthogonal projection.
 
 Therefore we can infer that $E$ is orthogonal to $col(A)$.
 
