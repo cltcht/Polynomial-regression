@@ -315,26 +315,17 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-### Matrice \( A \) avec sous-bloc \( X^1 \) et \( Y^1 \)
-
-
 $$
 A = \begin{pmatrix}
-x_1 & y_1 & 1 \\
-x_1 & y_2 & 1 \\
-\vdots & \vdots & \vdots \\
-x_1 & y_m & 1 \\
-x_2 & y_1 & 1 \\
-\vdots & \vdots & \vdots \\
-x_n & y_m & 1
+x_1 & x_1^2 & y_1 & 1 \\
+x_1 & x_1^2 & y_2 & 1 \\
+\vdots & \vdots & \vdots & \vdots \\
+x_1 & x_1^2 & y_m & 1 \\
+x_2 & x_2^2 & y_1 & 1 \\
+\vdots & \vdots & \vdots & \vdots \\
+x_n & x_n^2 & y_m & 1
 \end{pmatrix}
 $$
-
-**Légende :**
-- Chaque **ligne** correspond à une combinaison \( (x_i, y_j) \).
-- Les **colonnes** \( X^1 \) et \( Y^1 \) sont les deux premières colonnes.
-- Les **lignes verticales** séparent les blocs de coefficients.
-
 
 
 
