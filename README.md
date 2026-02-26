@@ -315,20 +315,22 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-```math
-A = \begin{bmatrix}
-  {X_{1}} & {Y_{1}} & 1 \\
-  {X_{1}} & {Y_{2}} & 1 \\
-  \vdots \\
-  {X_{1}} & {Y_{n}} & 1 \\
-  
-  {X_{2}} & {Y_{1}} & 1 \\
-  \vdots \\
-  {X_{2}} & {Y_{n}} & 1 \\
-  
-  \vdots \\
-  {X_{m}} & {Y_{n}} & 1 
-  \end{bmatrix}
+A =
+\left[
+\begin{array}{ccc}
+  X_{1} & Y_{1} & 1 \\
+  X_{1} & Y_{2} & 1 \\
+  \vdots & \vdots & \vdots \\
+  X_{1} & Y_{n} & 1 \\
+  \hline
+  X_{2} & Y_{1} & 1 \\
+  \vdots & \vdots & \vdots \\
+  X_{2} & Y_{n} & 1 \\
+  \hline
+  \vdots & \vdots & \vdots \\
+  X_{m} & Y_{n} & 1
+\end{array}
+\right]{bmatrix}
 ```
 
 
