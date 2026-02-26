@@ -298,6 +298,8 @@ Z = \begin{bmatrix}
 ```math
 \hat{Z}_{ij} = P_{x}({X_{j}}) + P_{y}({Y_{i}}) = \sum_{j=0}^{d_x}{p_{x,j}.X^j} + \sum_{i=0}^{d_y}{p_{y,i}.Y^k}
 ```
+Here, we want to reframe a bit our problem to use previous results.  
+
 Let f be a bijection from  $M_{(n,m)}({\mathbb{R}})$ to ${\mathbb{R}}^{nxm}$ such as :
 ```math
 f(Z) = Z_vec = \begin{bmatrix}
