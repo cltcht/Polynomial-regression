@@ -315,35 +315,27 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-### Sous-bloc \( X^1 \) et \( Y^1 \) (notation générique)
-
-| \( X^1 \) | \( Y^1 \) |
-|-----------|-----------|
-| \( x_1 \) | \( y_1 \) |
-| \( x_1 \) | \( y_2 \) |
-| ⋮         | ⋮         |
-| \( x_1 \) | \( y_{n_Y} \) |
-|-----------|-----------|
-| \( x_2 \) | \( y_1 \) |
-| \( x_2 \) | \( y_2 \) |
-| ⋮         | ⋮         |
-| \( x_2 \) | \( y_{n_Y} \) |
-|-----------|-----------|
-| ⋮         | ⋮         |
-|-----------|-----------|
-| \( x_{n_X} \) | \( y_1 \) |
-| \( x_{n_X} \) | \( y_2 \) |
-| ⋮         | ⋮         |
-| \( x_{n_X} \) | \( y_{n_Y} \) |
-
+### Matrice \( A \) avec sous-bloc \( X^1 \) et \( Y^1 \)
+```math
+\[
+A =
+\begin{bmatrix}
+\boxed{
+\begin{array}{cc|cc}
+\multicolumn{2}{c}{X^1} & \multicolumn{2}{c}{Y^1} \\
+x_1 & y_1 & x_1 & y_2 & \cdots & x_1 & y_{n_Y} \\
+x_2 & y_1 & x_2 & y_2 & \cdots & x_2 & y_{n_Y} \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+x_{n_X} & y_1 & x_{n_X} & y_2 & \cdots & x_{n_X} & y_{n_Y} \\
+\end{array}
+}
+\end{bmatrix}
+\]
+```
 **Légende :**
-- \( x_i \) : Valeur de \( X \) pour \( i = 1 \) à \( n_X \).
-- \( y_j \) : Valeur de \( Y \) pour \( j = 1 \) à \( n_Y \).
-- Les **lignes horizontales** séparent les blocs pour chaque valeur de \( X \).
-
-
-
-
+- Chaque **ligne** correspond à une combinaison \( (x_i, y_j) \).
+- Les **colonnes** \( X^1 \) et \( Y^1 \) sont les deux premières colonnes.
+- Les **lignes verticales** séparent les blocs de coefficients.
 
 
 
