@@ -347,7 +347,19 @@ x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
 \end{array}\right)
 $$
 
-
+$$
+A = \left(\begin{array}{cccc|cccc|c}
+x_1 & x_1^2 & \cdots & x_1^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+\multicolumn{4}{c|}{\cdots x_1 \cdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
+x_1 & x_1^2 & \cdots & x_1^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1 \\
+\hline
+\multicolumn{4}{c|}{\cdots x_2 \cdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\hline
+\multicolumn{4}{c|}{\vdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
+\hline
+x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
+\end{array}\right)
+$$
 
 
 
