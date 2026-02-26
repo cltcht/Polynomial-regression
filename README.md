@@ -316,20 +316,20 @@ f(Z) = \begin{bmatrix}
 ```
 One can define a matrix $A$ :
 ```math
+\[
 A =
-\left[
-\begin{array}{ccc}
-  X_{1} & Y_{1} & 1 \\
-  X_{1} & Y_{2} & 1 \\
-  \vdots & \vdots & \vdots \\
-  X_{1} & Y_{n} & 1 \\[6pt]
-  X_{2} & Y_{1} & 1 \\
-  \vdots & \vdots & \vdots \\
-  X_{2} & Y_{n} & 1 \\[6pt]
-  \vdots & \vdots & \vdots \\
-  X_{m} & Y_{n} & 1
-\end{array}
-\right]
+\left[\begin{array}{cccc|cccc|c}
+x_1^1 & x_1^2 & \cdots & x_1^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+x_2^1 & x_2^2 & \cdots & x_2^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+x_{n_X}^1 & x_{n_X}^2 & \cdots & x_{n_X}^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+\hline
+x_1^1 & x_1^2 & \cdots & x_1^{d_x} & y_2^1 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
+x_2^1 & x_2^2 & \cdots & x_2^{d_x} & y_2^1 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+x_{n_X}^1 & x_{n_X}^2 & \cdots & x_{n_X}^{d_x} & y_{n_Y}^1 & y_{n_Y}^2 & \cdots & y_{n_Y}^{d_y} & 1 \\
+\end{array}\right]
+\]
 ```
 
 
