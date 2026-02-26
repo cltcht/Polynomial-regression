@@ -322,12 +322,10 @@ A =
   X_{1} & Y_{1} & 1 \\
   X_{1} & Y_{2} & 1 \\
   \vdots & \vdots & \vdots \\
-  X_{1} & Y_{n} & 1 \\
-  & \rule[.5ex]{5ex}{0.5pt} & \\
+  X_{1} & Y_{n} & 1 \\[6pt]
   X_{2} & Y_{1} & 1 \\
   \vdots & \vdots & \vdots \\
-  X_{2} & Y_{n} & 1 \\
-  & \rule[.5ex]{5ex}{0.5pt} & \\
+  X_{2} & Y_{n} & 1 \\[6pt]
   \vdots & \vdots & \vdots \\
   X_{m} & Y_{n} & 1
 \end{array}
