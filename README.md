@@ -302,7 +302,7 @@ Here, we want to reframe a bit our problem to use previous results.
 
 Let f be a bijection from  $M_{(n,m)}({\mathbb{R}})$ to ${\mathbb{R}}^{nxm}$ such as :
 ```math
-f(Z) = Z_vec = \begin{bmatrix}
+f(Z) = Z_{vectorized} = \begin{bmatrix}
   {Z_{11}} \\
   {Z_{21}} \\
   \vdots \\
@@ -346,13 +346,13 @@ w = \begin{bmatrix}
 ```  
 We can write the equation :  
 ```math
-\hat{Z}_{vec} = A.w
+\hat{Z}_{vectorized} = A.w
 ```
 
 And apply the same algorithm as in **§A).3)** to obtain our coefficients.
 
 ```math
-w = (A^{T}.A)^{-1}.A^T.Z_vec
+w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 ```
 
 
