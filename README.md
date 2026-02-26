@@ -315,7 +315,7 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-$$
+```math
 A =
 \left[
 \begin{array}{ccc}
@@ -323,16 +323,16 @@ A =
   X_{1} & Y_{2} & 1 \\
   \vdots & \vdots & \vdots \\
   X_{1} & Y_{n} & 1 \\
-  \hline
+  \cline{1-3}
   X_{2} & Y_{1} & 1 \\
   \vdots & \vdots & \vdots \\
   X_{2} & Y_{n} & 1 \\
-  \hline
+  \cline{1-3}
   \vdots & \vdots & \vdots \\
   X_{m} & Y_{n} & 1
 \end{array}
 \right]
-$$
+```
 
 
 
