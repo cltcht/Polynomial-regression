@@ -315,6 +315,7 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
+
 $$
 A = \begin{pmatrix}
 x_1 & x_1^2 & y_1 & 1 \\
