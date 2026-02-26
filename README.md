@@ -332,6 +332,18 @@ $$
 Z(x, y) = \sum_{k=1}^{d_x} a_k \cdot x^k + \sum_{k=1}^{d_y} b_k \cdot y^k + c
 $$
 
+$$
+A = \left(\begin{array}{cccc|cccc|c}
+x_1 & x_1^2 & \cdots & x_1^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+x_1 & x_1^2 & \cdots & x_1^{d_x} & y_2 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+x_1 & x_1^2 & \cdots & x_1^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1 \\
+\hline
+x_2 & x_2^2 & \cdots & x_2^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
+\end{array}\right)
+$$
 
 
 
