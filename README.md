@@ -334,12 +334,12 @@ $$
 And a coefficient vector $w in {\mathbb{R}}^{d_{x}+d_{y}+1}$ :
 ```math
 w = \begin{bmatrix}
-  {p_{x}_{0}} \\
+  {p_{x,0}} \\
   \vdots \\
-  p_{x}_{d_x} \\
-  {p_{y}_{0}} \\
+  p_{x,d_x} \\
+  {p_{y,0}} \\
   \vdots \\
-  p_{y}_{d_x} \\
+  p_{y,d_x} \\
 \end{bmatrix}
 ```
 
