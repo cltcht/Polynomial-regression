@@ -330,7 +330,7 @@ A =
   \vdots & \vdots & \vdots \\
   X_{m} & Y_{n} & 1
 \end{array}
-\right]{bmatrix}
+
 ```
 
 
