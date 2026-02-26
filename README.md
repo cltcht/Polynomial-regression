@@ -314,23 +314,7 @@ f(Z) = \begin{bmatrix}
    {Z_{nm}}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
-One can define a matrix $A$ :
-
-$$
-A = \begin{pmatrix}
-x_1 & x_1^2 & \cdots & x_1^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-x_1 & x_1^2 & \cdots & x_1^{d_x} & y_2 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
-\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-x_1 & x_1^2 & \cdots & x_1^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1 \\
-x_2 & x_2^2 & \cdots & x_2^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
-\end{pmatrix}
-$$
-
-$$
-Z(x, y) = \sum_{k=1}^{d_x} a_k \cdot x^k + \sum_{k=1}^{d_y} b_k \cdot y^k + c
-$$
+One can define a matrix $A \in  $M_{(nxm,d_{x}+d_{y}+1)}({\mathbb{R}})$ $ :
 
 $$
 A = \left(\begin{array}{cccc|cccc|c}
@@ -347,19 +331,21 @@ x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
 \end{array}\right)
 $$
 
-$$
-A = \left(\begin{array}{cccc|cccc|c}
-x_1 & x_1^2 & \cdots & x_1^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-\multicolumn{4}{c|}{\cdots x_1 \cdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
-x_1 & x_1^2 & \cdots & x_1^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1 \\
-\hline
-\multicolumn{4}{c|}{\cdots x_2 \cdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
-\hline
-\multicolumn{4}{c|}{\vdots} & \vdots & \vdots & \vdots & \vdots & \vdots \\
-\hline
-x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
-\end{array}\right)
-$$
+And a coefficient vector $w in {\mathbb{R}}^{d_{x}+d_{y}+1}$ :
+```math
+w = \begin{bmatrix}
+  {p_{x}_{0}} \\
+  \vdots \\
+  p_{x}_{d_x} \\
+  {p_{y}_{0}} \\
+  \vdots \\
+  p_{y}_{d_x} \\
+\end{bmatrix}
+```
+
+
+
+
 
 
 
