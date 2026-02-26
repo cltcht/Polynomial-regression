@@ -227,7 +227,7 @@ b
 
 ### 3 - Polynomial regression : Matrix inversion method
 
-So, in **§2** we played a bit with Graham-Schmidt algorithm. But the easiest to get the $w$ vector is definitelly to use matrix inversion method (also discussed in **§2**).
+So, in **§2** we played a bit with Graham-Schmidt algorithm. But the easiest to get the $w$ vector is definitelly to use matrix inversion method (also discussed in **§A)2**).
 
 Let's do that !  
 
@@ -300,7 +300,7 @@ Z = \begin{bmatrix}
 ```
 Let f be a bijection from  $M_{(n,m)}({\mathbb{R}})$ to ${\mathbb{R}}^{nxm}$ such as :
 ```math
-f(Z) = \begin{bmatrix}
+f(Z) = Z_vec = \begin{bmatrix}
   {Z_{11}} \\
   {Z_{21}} \\
   \vdots \\
@@ -331,7 +331,7 @@ x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
 \end{array}\right)
 $$
 
-And a coefficient vector $w in {\mathbb{R}}^{d_{x}+d_{y}+1}$ :
+And a coefficient vector $w \in {\mathbb{R}}^{d_{x}+d_{y}+1}$ :
 ```math
 w = \begin{bmatrix}
   {p_{x,0}} \\
@@ -341,8 +341,17 @@ w = \begin{bmatrix}
   \vdots \\
   p_{y,d_x} \\
 \end{bmatrix}
+```  
+We can write the equation :  
+```math
+\hat{Z}_{vec} = A.w
 ```
 
+And apply the same algorithm as in **§A).3)** to obtain our coefficients.
+
+```math
+w = (A^{T}.A)^{-1}.A^T.Z_vec
+```
 
 
 
