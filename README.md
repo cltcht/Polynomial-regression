@@ -273,7 +273,7 @@ The processus thought in **§2** : $E \in  col(A)^{\perp} \Leftrightarrow \in ke
 ### 4 - (X, Y) Multivariate polynomial regression : Matrix inversion method
 
 Let's add a dimension to our problem : 
-Let $n \in \mathbb{N}$, $(X, Y) \in \mathbb{R}^{m}\times\mathbb{R}^{n}$ be two sets of real values.  
+Let $(n, m) \in \mathbb{N}\times\mathbb{N}$, $(X, Y) \in \mathbb{R}^{m}\times\mathbb{R}^{n}$ be two sets of real values.  
 ```math
 \text{Rewrite : } X=(X_{j})_{1 \leq j \leq m} \text{ and }  Y=(Y_{i})_{1 \leq i \leq n}  
 ```
@@ -316,7 +316,7 @@ f(Z) = Z_vec = \begin{bmatrix}
    {Z_{nm}}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
-One can define a matrix $A \in  $M_{(nxm,d_{x}+d_{y}+1)}({\mathbb{R}})$ $ :
+One can define a matrix $A \in  $M_{(nxm,d_{x}+d_{y}+1)}({\mathbb{R}})$ :
 
 $$
 A = \left(\begin{array}{cccc|cccc|c}
