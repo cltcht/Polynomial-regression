@@ -316,22 +316,20 @@ f(Z) = \begin{bmatrix}
 ```
 One can define a matrix $A$ :
 ### Matrice \( A \) avec sous-bloc \( X^1 \) et \( Y^1 \)
-```math
-\[
-A =
-\begin{bmatrix}
-\boxed{
-\begin{array}{cc|cc}
-\multicolumn{2}{c}{X^1} & \multicolumn{2}{c}{Y^1} \\
-x_1 & y_1 & x_1 & y_2 & \cdots & x_1 & y_{n_Y} \\
-x_2 & y_1 & x_2 & y_2 & \cdots & x_2 & y_{n_Y} \\
-\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
-x_{n_X} & y_1 & x_{n_X} & y_2 & \cdots & x_{n_X} & y_{n_Y} \\
-\end{array}
-}
-\end{bmatrix}
-\]
-```
+
+
+$$
+A = \begin{pmatrix}
+x_1 & y_1 & 1 \\
+x_1 & y_2 & 1 \\
+\vdots & \vdots & \vdots \\
+x_1 & y_m & 1 \\
+x_2 & y_1 & 1 \\
+\vdots & \vdots & \vdots \\
+x_n & y_m & 1
+\end{pmatrix}
+$$
+
 **Légende :**
 - Chaque **ligne** correspond à une combinaison \( (x_i, y_j) \).
 - Les **colonnes** \( X^1 \) et \( Y^1 \) sont les deux premières colonnes.
