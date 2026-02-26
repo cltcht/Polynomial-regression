@@ -320,10 +320,10 @@ $$
 A = \begin{pmatrix}
 x_1 & x_1^2 & \cdots & x_1^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
 x_1 & x_1^2 & \cdots & x_1^{d_x} & y_2 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
-\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
 x_1 & x_1^2 & \cdots & x_1^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1 \\
 x_2 & x_2^2 & \cdots & x_2^{d_x} & y_1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
 x_n & x_n^2 & \cdots & x_n^{d_x} & y_m & y_m^2 & \cdots & y_m^{d_y} & 1
 \end{pmatrix}
 $$
