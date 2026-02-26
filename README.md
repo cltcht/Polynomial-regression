@@ -315,6 +315,7 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
+```math
 A =
 \left[
 \begin{array}{ccc}
