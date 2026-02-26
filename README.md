@@ -315,22 +315,32 @@ f(Z) = \begin{bmatrix}
 \end{bmatrix}, \in {\mathbb{R}}),
 ```
 One can define a matrix $A$ :
-```math
-\[
-A =
-\left[\begin{array}{cccc|cccc|c}
-x_1^1 & x_1^2 & \cdots & x_1^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-x_2^1 & x_2^2 & \cdots & x_2^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
-x_{n_X}^1 & x_{n_X}^2 & \cdots & x_{n_X}^{d_x} & y_1^1 & y_1^2 & \cdots & y_1^{d_y} & 1 \\
-\hline
-x_1^1 & x_1^2 & \cdots & x_1^{d_x} & y_2^1 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
-x_2^1 & x_2^2 & \cdots & x_2^{d_x} & y_2^1 & y_2^2 & \cdots & y_2^{d_y} & 1 \\
-\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
-x_{n_X}^1 & x_{n_X}^2 & \cdots & x_{n_X}^{d_x} & y_{n_Y}^1 & y_{n_Y}^2 & \cdots & y_{n_Y}^{d_y} & 1 \\
-\end{array}\right]
-\]
-```
+### Sous-bloc \( X^1 \) et \( Y^1 \) (notation générique)
+
+| \( X^1 \) | \( Y^1 \) |
+|-----------|-----------|
+| \( x_1 \) | \( y_1 \) |
+| \( x_1 \) | \( y_2 \) |
+| ⋮         | ⋮         |
+| \( x_1 \) | \( y_{n_Y} \) |
+|-----------|-----------|
+| \( x_2 \) | \( y_1 \) |
+| \( x_2 \) | \( y_2 \) |
+| ⋮         | ⋮         |
+| \( x_2 \) | \( y_{n_Y} \) |
+|-----------|-----------|
+| ⋮         | ⋮         |
+|-----------|-----------|
+| \( x_{n_X} \) | \( y_1 \) |
+| \( x_{n_X} \) | \( y_2 \) |
+| ⋮         | ⋮         |
+| \( x_{n_X} \) | \( y_{n_Y} \) |
+
+**Légende :**
+- \( x_i \) : Valeur de \( X \) pour \( i = 1 \) à \( n_X \).
+- \( y_j \) : Valeur de \( Y \) pour \( j = 1 \) à \( n_Y \).
+- Les **lignes horizontales** séparent les blocs pour chaque valeur de \( X \).
+
 
 
 
