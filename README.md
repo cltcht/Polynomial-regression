@@ -1,6 +1,13 @@
 # Polynomial-regression
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
+
 ## Summary
 As personal project I wanted to play with one "simple" mathematical problem along with differents programming languages.
 I choosed polynomial regression in order to fit a set of points.
