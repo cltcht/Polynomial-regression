@@ -253,10 +253,10 @@ if __name__ == "__main__":
 
     ### SAMPLES ###
 
-    nb_X = 3 #samples
-    X = np.arange(0, nb_X)
-    nb_Y = 3 #samples
-    Y = np.arange(0, nb_Y)
+    nb_X = 300 #samples
+    X = np.arange(-nb_X, nb_X)
+    nb_Y = 300 #samples
+    Y = np.arange(-nb_Y, nb_Y)
 
     print(f" X = {X}")
     print(f" Y = {Y}")
