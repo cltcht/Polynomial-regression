@@ -1,9 +1,9 @@
 # Polynomial-regression
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
-##### Workflows :
-![CI CPP](https://github.com/cltcht/Polynomial-regression/actions/workflows/ci_cpp.yml/badge.svg)
-![CI Python](https://github.com/cltcht/Polynomial-regression/actions/workflows/ci_python.yml/badge.svg)
+##### Workflows :  
+![CI CPP](https://github.com/cltcht/Polynomial-regression/actions/workflows/ci_cpp.yml/badge.svg)  
+![CI Python](https://github.com/cltcht/Polynomial-regression/actions/workflows/ci_python.yml/badge.svg)  
   
 
 
