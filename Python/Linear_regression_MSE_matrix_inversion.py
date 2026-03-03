@@ -164,7 +164,7 @@ if __name__ == "__main__":
 
 
     # Definition of Y_th
-    Y_th = np.zeros_like(X)
+    Y_th = np.zeros_like(X, dtype=float)
     for i in range(d + 1):
         Y_th += coeff_th[i] * (X ** i) #ad.x^d + ... + a0.x^0
 
