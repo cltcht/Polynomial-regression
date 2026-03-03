@@ -19,7 +19,6 @@ jobs:
         with:
           environment-file: Python/environment.yml
           activate-environment: benv
-          python-version: '3.13'
 
       - name: Run all Python scripts
         env:
