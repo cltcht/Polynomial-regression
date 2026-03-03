@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(Plot LANGUAGES CXX)
 
-set(exec regression_lineaire)
+set(exec regression)
+set(MAIN_FILE regression_polynomiale.cpp)
 
 # ---- Standard ----
 set(CMAKE_CXX_STANDARD 17)
@@ -23,7 +24,7 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${CMAKE_SOURCE_DIR}/src/plot_graph.cpp
     ${CMAKE_SOURCE_DIR}/src/plot_graph_3D.cpp
     ${CMAKE_SOURCE_DIR}/src/data_setp.cpp
-    ${CMAKE_SOURCE_DIR}/src/regression_polynomiale_2D.cpp
+    ${CMAKE_SOURCE_DIR}/src/${MAIN_FILE}
 )
 
 # ---- include ----

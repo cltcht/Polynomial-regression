@@ -371,9 +371,9 @@ w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 
 ## B) Python
 
-First few scripts were done in Python...
+First few scripts were done in Python.
 Few different approach were tried, they are summarized chronically.
-Going from "usual" linear fit to multivariate fit.
+Going from "usual" linear fit to multivariate fit... Meaning the last one is also the more achieved one.
 
 
 
@@ -419,7 +419,26 @@ Then run `Linear_regression_MSE_matrix_inversion.py`
 
 ## B) C++
 
-toto  
+Each C++ script can be divided in two parts : computing and plotting.  
+The computing part is done with `Eigen` library for matrix and vector operations.  
+The plotting part is done with `OpenGL` library, graphical engine is in `plot_graph.cpp/hpp` and `plot_graph_3D.cpp/hpp` files. 
+
+**Note : I built 3D engine over function and doc I found on internet, it is still a bit sketchy on the rotation part, but it works**
+
+############################################
+
+### 0 - Setting up environment
+
+Install following libraries in order to compile the code :
+`sudo apt install cmake`
+`sudo apt install libgl-dev libglew-dev libglfw3-dev libglm-dev freeglut3-dev libeigen3-dev`
+
+### 1 - Run Cmake
+
+Go into `/Cpp` folder.  
+Run `cmake -B build -S .` to configure cmake
+Edit `CmakeLists.txt` -> Define set(MAIN_FILE file_to_compile.cpp)  
+file_to_compile.cpp $\in$ {regression}
 
 
 

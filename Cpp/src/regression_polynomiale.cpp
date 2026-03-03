@@ -19,7 +19,6 @@ using namespace glm;
 using namespace std;
 
 #include "../include/plot_graph.hpp"
-#include "../include/data_set.hpp"
 
 #include "../include/data_setp.hpp"
 
