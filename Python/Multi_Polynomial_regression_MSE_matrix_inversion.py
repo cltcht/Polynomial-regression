@@ -253,9 +253,9 @@ if __name__ == "__main__":
 
     ### SAMPLES ###
 
-    nb_X = 100 #samples
+    nb_X = 3 #samples
     X = np.arange(0, nb_X)
-    nb_Y = 100 #samples
+    nb_Y = 3 #samples
     Y = np.arange(0, nb_Y)
 
     print(f" X = {X}")
