@@ -383,6 +383,7 @@ Going from "usual" linear fit to multivariate fit... Meaning the last one is als
 Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).  
 
 In shell execute following command : `conda env create -f environment.yml`.  
+Activate environment with `conda activate benv`.  
 
 
 ### 1 - 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space  `MSE_phase_space_search.py`
