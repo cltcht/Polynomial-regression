@@ -389,18 +389,24 @@ Script that runs a MSE resolution approach described in **§A).1**
 (Unefficient one - just a try - you can skip it)  
 
 **Run the script**  
-Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.    
+Modify hardcoded values for lattice limits `(amin, amax, bmin, bmax)` and resolution `(dx, dy)`and definition of data to fit $Y$ with subsequent random noise.    
+
+Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
+
 Then run `python3 MSE_phase_space_search.py`  
 
 ### 2 - 2D Linear regression : Vector projection over linear span space `Linear_regression_MSE_vector_projection.py`  
 
-Script that runs a Linear regression approach described in **§A).2**.  
-Yet, it has been modified to fit with polynomes of higher degree.  
+Script that runs a Linear regression approach described in **§A).2**.
+Y data is randomly generated with random linear coefficients.  
+Yet, it has been modified to fit with polynomes of higher degree (`int d`).  
 
 **Run the script**  
 Modify hardcoded values for :
-* (int) s : X, Y samples number
-* (int) d : degree of polynomial fit (1 by default) -> coefficients are random  
+* (int) nb : number of samples
+
+Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
+
 Then run `python3 Linear_regression_MSE_vector_projection.py`  
 
 ### 3 - Linear/Polynomial regression : Matrix inversion method `Linear_regression_MSE_matrix_inversion.py`
@@ -409,10 +415,26 @@ Script that runs a Polynomial regression approach described in **§A).3**.
 
 **Run the script**  
 Modify hardcoded values for :
-* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector.
-* (float) xmin, xmax : minimum value for x, maximum value for x
 * (int) nb : number of samples
+* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector : $\sum{k=0}^{d}{coeff_{th, k}*X^{d-k}}$  
+
+Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
+
 Then run `python3 Linear_regression_MSE_matrix_inversion.py`
+
+### 4 - Multi-Polynomial regression : Matrix inversion method `Multi_Polynomial_regression_MSE_matrix_inversion.py`
+
+Script that runs a Polynomial regression approach described in **§A).3**.  
+
+**Run the script**  
+Modify hardcoded values for :
+* (bool) classic_demo : Polynomial(X^2, X, Y^2, Y)
+* (bool) ellipsis_demo : 3D-Ellipis related data
+* (bool) gaussian_demo : 2D-Gaussian related data
+
+Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
+
+Then run `python3 Multi_Polynomial_regression_MSE_matrix_inversion.py`
 
 
 =================================================================================
@@ -436,7 +458,7 @@ Install following libraries in order to compile the code :
 
 Go into `/Cpp` folder  
 Run `cmake -B build -S .` to configure cmake  
-Edit `CmakeLists.txt` -> Modify set(MAIN_FILE file_to_compile.cpp) line
+Edit `CmakeLists.txt` -> Modify `set(MAIN_FILE file_to_compile.cpp)` line  
 file_to_compile.cpp can be :  
 * `Linear_regression_MSE_matrix_inversion.cpp` -> (Linear fit of (X, Y) data)
 * `Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y) data)  

@@ -153,7 +153,7 @@ if __name__ == "__main__":
     # np.random.seed(0)
     ### SAMPLES ###
     # Polynome coefficients 
-    coeff_th = [1.0, -3.2, 0.5, 7.8, -12.4, 4.1, 9.6, -15.3, 6.7, 2.9, -5.4,1.2]
+    coeff_th = [1.0, -3.2, 0.5, 7.8, -12.4, 4.1, 9.6, -15.3, 6.7, 2.9, -5.4, 1.2]
 
     nb = 100 #samples
     X = np.arange(0, nb)

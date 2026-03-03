@@ -199,7 +199,7 @@ if __name__ == "__main__":
 
     #### DEMO coefficients : X² Y³ ####
     # Demonstration on (^2, ^3) order (X,Y) multi-polynome
-    classic_demo = False
+    classic_demo = True
     if classic_demo :
         # Liste des coefficients du polynôme
         coeff_th_X = [1, 0.2, -0.04]
@@ -214,8 +214,8 @@ if __name__ == "__main__":
     # Let us consider the following equation T² + X² + Y² = R
     # We consider and solve forZ = R - X² - Y² = T²
     # Then we solve Z = T^0.5
-    ellipsis = True
-    if ellipsis :
+    ellipsis_demo = False
+    if ellipsis_demo :
         R = 1
         a = 3
         b = 2 
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     # Let Z = ln(T) => Z = ln(T) = -X² -Y²
     # We solve Z = -X² - Y²
     # And plot T = exp(Z)
-    gaussian_demo = False
+    gaussian_demo = True
     if gaussian_demo :
         # Liste des coefficients du polynôme
         coeff_th_X = [0.0, -5.0, -1.3*1E1]
@@ -302,8 +302,8 @@ if __name__ == "__main__":
     
     Z_estimate +=  coeff[-1]
 
-    if ellipsis :
-        # ellipsis :
+    if ellipsis_demo :
+        # ellipsis_demo :
         Z = np.sqrt(Z+R)
         Z_estimate = np.sqrt(Z_estimate+R)
         Z_ = -Z
@@ -321,8 +321,8 @@ if __name__ == "__main__":
   
     ax_3d.scatter(mg_X, mg_Y, Z, marker = '.', color='red', alpha=0.1)
     ax_3d.plot_wireframe(mg_X, mg_Y, Z_estimate, linewidth=0.5)
-    if ellipsis :
-        # negative ellipsis
+    if ellipsis_demo :
+        # negative ellipsis_demo
         ax_3d.scatter(mg_X, mg_Y, Z_, marker = '.', color='red', alpha=0.1)
         ax_3d.plot_wireframe(mg_X, mg_Y, Z_estimate_, linewidth=0.5)
 
