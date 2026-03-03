@@ -28,7 +28,8 @@ For reminders and proofs of algebra theorems used, please see [this website](htt
 
 ----------------------------------
 
-<a name="A"/>  
+<a name="A"/> 
+
 ## A) Discusion on regression
 
 In this paragraph I will discuss different approaches for regression problems to put all the mathematics in one place.
@@ -375,6 +376,7 @@ w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 
 
 <a name="B"/>  
+
 ## B) Python
 
 First few scripts were done in Python...
@@ -424,6 +426,7 @@ Modify hardcoded values for :
 Then run `Linear_regression_MSE_matrix_inversion.py`
 
 <a name="C"/>  
+
 ## B) C++
 
 toto  
