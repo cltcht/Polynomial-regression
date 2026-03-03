@@ -15,7 +15,7 @@ It felt like "using a bulldozer to crack an egg" when one can find linear-algebr
 I begun with Python, see `/Python` repo for scripts and specific `readme`.
 Then I switched to C++, see `/Cpp` repo for scripts and specific `readme`. 
 
-Copy-pasted and adapted graphic engine functions from [kavan010 git](https://github.com/kavan010) for C++.
+Graphic engine functions are inspired from [kavan010 git](https://github.com/kavan010) for C++. 
 
 For reminders and proofs of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html).
 
@@ -423,7 +423,7 @@ Each C++ script can be divided in two parts : computing and plotting.
 The computing part is done with `Eigen` library for matrix and vector operations.  
 The plotting part is done with `OpenGL` library, graphical engine is in `plot_graph.cpp/hpp` and `plot_graph_3D.cpp/hpp` files. 
 
-**Note : I built 3D engine over function and doc I found on internet, it is still a bit sketchy on the rotation part, but it works**
+**Note : I built the 3D engine over functions and doc I found on internet, it is still a bit sketchy (not convenient) on the rotation part, but it works.**
 
 ############################################
 
@@ -441,9 +441,9 @@ Edit `CmakeLists.txt` -> Modify set(MAIN_FILE file_to_compile.cpp) line
 file_to_compile.cpp can be : 
 * `Linear_regression_MSE_matrix_inversion.cpp` -> (Linear fit of (X, Y) data)
 * `Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y) data)
-* `Multi_Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y, Z) data)
-Run `cmake --build build` to compile
-Run `./build/regression` to execute program
+* `Multi_Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y, Z) data)  
+Run `cmake --build build` to compile  
+Run `./build/regression` to execute program  
 
 ### 2 - Linear regression : Matrix inversion method `Linear_regression_MSE_matrix_inversion.cpp`
 
@@ -458,10 +458,10 @@ Modify hardcoded values for :
 *  float xmin : min value in X vector
 *  float xmin : min value in X vector
 *  Eigen::VectorXf w_th : coefficients for linear regression in order to generate data:  
-$w_{th}(0)X + w_{th}(1)(1, ..., 1)^T$
+$w_{th}(0)X + w_{th}(1)(1, ..., 1)^T$  
 
 **Run the script**
-Follow *1 - Compile with Cmake* instructions.
+Follow *1 - Compile with Cmake* instructions.  
 
 ### 3 - Polynomial regression : Matrix inversion method `Polynomial_regression_MSE_matrix_inversion.cpp`
 
@@ -476,10 +476,10 @@ Modify hardcoded values for :
 *  float xmin : min value in X vector
 *  float xmin : min value in X vector
 *  Eigen::VectorXf w_th : coefficients for polynomial regression in order to generate data:  
-$\sum{k=0}^{d}{w_{th, k}*X^{d-k}}$
+$\sum{k=0}^{d}{w_{th, k}*X^{d-k}}$  
 
 **Run the script**
-Follow *1 - Compile with Cmake* instructions.
+Follow *1 - Compile with Cmake* instructions.  
 
 ### 3 - Polynomial regression : Matrix inversion method `Multi_Polynomial_regression_MSE_matrix_inversion.cpp`
 
@@ -489,7 +489,7 @@ It first generate noised data, then does regression and plot it using 3D graphic
 **Set-up the script**
 Modify hardcoded values for :
 *  bool demo_simple : Demo of algorithm with Z = fct(X^2; Y^2, Y^1)
-*  bool demo_gaussian :  Demo of algorithm with Z = exp(X^2+ Y^2):
+*  bool demo_gaussian :  Demo of algorithm with Z = exp(X^2+ Y^2)  
 
 
 **Run the script**
