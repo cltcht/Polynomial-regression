@@ -403,7 +403,7 @@ Yet, it has been modified to fit with polynomes of higher degree (`int d`).
 
 **Run the script**  
 Modify hardcoded values for :
-* (int) nb : number of samples
+* `(int) nb` : number of samples
 
 Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
 
@@ -415,8 +415,8 @@ Script that runs a Polynomial regression approach described in **§A).3**.
 
 **Run the script**  
 Modify hardcoded values for :
-* (int) nb : number of samples
-* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector : $\sum{k=0}^{d}{coeff_{th, k}*X^{d-k}}$  
+* `(int) nb` : number of samples
+* `(float np.dnarray) coeff_th` : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector : $\sum{k=0}^{d}{coeff_{th, k}*X^{d-k}}$  
 
 Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
 
@@ -428,9 +428,9 @@ Script that runs a Polynomial regression approach described in **§A).3**.
 
 **Run the script**  
 Modify hardcoded values for :
-* (bool) classic_demo : Polynomial(X^2, X, Y^2, Y)
-* (bool) ellipsis_demo : 3D-Ellipis related data
-* (bool) gaussian_demo : 2D-Gaussian related data
+* `(bool) classic_demo` : Polynomial(X^2, X, Y^2, Y)
+* `(bool) ellipsis_demo` : 3D-Ellipis related data
+* `(bool) gaussian_demo` : 2D-Gaussian related data
 
 Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
 
@@ -473,12 +473,12 @@ It first generate noised data, then does regression and plot it using graphical 
 
 **Set-up the script**  
 Modify hardcoded values for :
-*  int n = 30 : points number in X vector
-*  int d = 1 : degree of polynom fit
-*  float xmax : max value in X vector
-*  float xmin : min value in X vector
-*  float xmin : min value in X vector
-*  Eigen::VectorXf w_th : coefficients for linear regression in order to generate data:  
+*  `int n` : points number in X vector
+*  `int d` : degree of polynom fit
+*  `float xmax` : max value in X vector
+*  `float xmin` : min value in X vector
+*  `float xmin` : min value in X vector
+*  `Eigen::VectorXf w_th` : coefficients for linear regression in order to generate data:  
 $w_{th}(0)X + w_{th}(1)(1, ..., 1)^T$  
 
 **Run the script**  
@@ -491,12 +491,12 @@ It first generate noised data, then does regression and plot it using graphical 
 
 **Set-up the script**  
 Modify hardcoded values for :
-*  int n = 30 : points number in X vector
-*  int d = 1 : degree of polynom fit
-*  float xmax : max value in X vector
-*  float xmin : min value in X vector
-*  float xmin : min value in X vector
-*  Eigen::VectorXf w_th : coefficients for polynomial regression in order to generate data:  
+*  `int n` : points number in X vector
+*  `int d` : degree of polynom fit
+*  `float xmax` : max value in X vector
+*  `float xmin` : min value in X vector
+*  `float xmin` : min value in X vector
+*  `Eigen::VectorXf w_th` : coefficients for polynomial regression in order to generate data:  
 $\sum{k=0}^{d}{w_{th, k}*X^{d-k}}$  
 
 **Run the script**  
@@ -509,8 +509,8 @@ It first generate noised data, then does regression and plot it using 3D graphic
 
 **Set-up the script**  
 Modify hardcoded values for :
-*  bool demo_simple : Demo of algorithm with Z = fct(X^2; Y^2, Y^1)
-*  bool demo_gaussian :  Demo of algorithm with Z = exp(X^2+ Y^2)  
+*  `bool demo_simple` : Demo of algorithm with Z = fct(X^2; Y^2, Y^1)
+*  `bool demo_gaussian` :  Demo of algorithm with Z = exp(X^2+ Y^2)  
 
 
 **Run the script**  
