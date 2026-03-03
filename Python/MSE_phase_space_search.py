@@ -87,8 +87,7 @@ if __name__ == "__main__":
 	# Convert the index to a tuple of coordinates (row, column) for SS_fit
 	min_indices = np.unravel_index(min_flat_index_ss_fit, R_2.shape)
 
-	print(f"\n(a, b) = {float(A[max_indices[0], max_indices[1]]), \
-				float(B[max_indices[0], max_indices[1]])}\n")
+	print(f"\n(a, b) = {float(A[max_indices[0], max_indices[1]]), float(B[max_indices[0], max_indices[1]])}\n")
 
 
 	### R**2 PLOT ###
