@@ -2,11 +2,10 @@
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
 ##### Table of Contents  
-[Headers](#headers)  
+[A) Discusion on regression](#headers)  
 [Emphasis](#emphasis)  
 ...snip...    
 <a name="headers"/>
-## Headers
 
 ## Summary
 As personal project I wanted to play with one "simple" mathematical problem along with differents programming languages.
@@ -15,10 +14,10 @@ I choosed polynomial regression in order to fit a set of points.
 I've seen online some ML based approaches which I don't like.
 It felt like "using a bulldozer to crack an egg" when one can find linear-algebra based solution which at least to me (AND in the case of "easy" fitting problems, eg. low dimension, low data volume) feels more elegant.
 
-I begun with Python, see `/Python` repo for scripts.
-Then I switched to C++, see `/Cpp` repo for scripts. 
+I begun with Python, see `/Python` repo for scripts and specific `readme`.
+Then I switched to C++, see `/Cpp` repo for scripts and specific `readme`. 
 
-Copy-pasted few graphic engine functions from [kavan010 git](https://github.com/kavan010) for C++.
+Copy-pasted and adapted graphic engine functions from [kavan010 git](https://github.com/kavan010) for C++.
 
 For reminders and proofs of algebra theorems used, please see [this website](https://textbooks.math.gatech.edu/ila/1553/index2.html).
 
