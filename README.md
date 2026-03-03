@@ -367,7 +367,7 @@ w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 ```
 
 
-
+############################################
 
 ## B) Python
 
@@ -376,46 +376,46 @@ Few different approach were tried, they are summarized chronically.
 Going from "usual" linear fit to multivariate fit... Meaning the last one is also the more achieved one.
 
 
+### 0 - Setting up environment  
 
-############################################
+Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).  
 
-### 0 - Setting up environment
-
-Install miniconda using [following tutorial](https://www.anaconda.com/docs/getting-started/miniconda/main).
-
-In shell execute following command : `conda env create -f environment.yml`.
+In shell execute following command : `conda env create -f environment.yml`.  
 
 
-### 1 - 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space  `espace_des_phases.py`
+### 1 - 2D Linear regression "naive approach" : Least Square maxima search in bounded phase space  `MSE_phase_space_search.py`
 
-Script that runs a MSE resolution approach described in **§A).1** 
-(Unefficient one - just a try - you can skip it)
+Script that runs a MSE resolution approach described in **§A).1**   
+(Unefficient one - just a try - you can skip it)  
 
-**Run the script**
-Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.  
-Then run `python3 espace_des_phases.py`
+**Run the script**  
+Modify hardcoded values for lattice limits and resolution and definition of $Y$ with subsequent random noise.    
+Then run `python3 MSE_phase_space_search.py`  
 
-### 2 - 2D Linear regression : Vector projection over linear span space `Linear_regression_MSE_vector_projection.py`
+### 2 - 2D Linear regression : Vector projection over linear span space `Linear_regression_MSE_vector_projection.py`  
 
-Script that runs a Linear regression approach described in **§A).2**.
-Yet, it has been modified to fit with polynomes of higher degree.
+Script that runs a Linear regression approach described in **§A).2**.  
+Yet, it has been modified to fit with polynomes of higher degree.  
 
-**Run the script**
+**Run the script**  
 Modify hardcoded values for :
 * (int) s : X, Y samples number
-* (int) d : degree of polynomial fit (1 by default) -> coefficients are random
-Then run `python3 Linear_regression_MSE_vector_projection.py`
+* (int) d : degree of polynomial fit (1 by default) -> coefficients are random  
+Then run `python3 Linear_regression_MSE_vector_projection.py`  
 
-### 3 - Polynomial regression : Matrix inversion method `Linear_regression_MSE_matrix_inversion.py`
+### 3 - Linear/Polynomial regression : Matrix inversion method `Linear_regression_MSE_matrix_inversion.py`
 
-Script that runs a Polynomial regression approach described in **§A).3**.
+Script that runs a Polynomial regression approach described in **§A).3**.  
 
-**Run the script**
+**Run the script**  
 Modify hardcoded values for :
-* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on your
+* (float np.dnarray) coeff_th : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector.
 * (float) xmin, xmax : minimum value for x, maximum value for x
 * (int) nb : number of samples
 Then run `python3 Linear_regression_MSE_matrix_inversion.py`
+
+
+############################################
 
 ## B) C++
 
@@ -429,18 +429,18 @@ The plotting part is done with `OpenGL` library, graphical engine is in `plot_gr
 
 ### 0 - Setting up environment
 
-Install following libraries in order to compile the code :
-`sudo apt install cmake`
-`sudo apt install libgl-dev libglew-dev libglfw3-dev libglm-dev freeglut3-dev libeigen3-dev`
+Install following libraries in order to compile the code :  
+`sudo apt install cmake`  
+`sudo apt install libgl-dev libglew-dev libglfw3-dev libglm-dev freeglut3-dev libeigen3-dev`  
 
 ### 1 - Compile with Cmake
 
-Go into `/Cpp` folder.  
-Run `cmake -B build -S .` to configure cmake
+Go into `/Cpp` folder  
+Run `cmake -B build -S .` to configure cmake  
 Edit `CmakeLists.txt` -> Modify set(MAIN_FILE file_to_compile.cpp) line
-file_to_compile.cpp can be : 
+file_to_compile.cpp can be :  
 * `Linear_regression_MSE_matrix_inversion.cpp` -> (Linear fit of (X, Y) data)
-* `Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y) data)
+* `Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y) data)  
 * `Multi_Polynomial_regression_MSE_matrix_inversion.cpp` -> (Polynomial fit of (X, Y, Z) data)  
 Run `cmake --build build` to compile  
 Run `./build/regression` to execute program  
@@ -450,7 +450,7 @@ Run `./build/regression` to execute program
 Script that runs a Linear regression approach described in **§A).3**.  
 It first generate noised data, then does regression and plot it using graphical engine.  
 
-**Set-up the script**
+**Set-up the script**  
 Modify hardcoded values for :
 *  int n = 30 : points number in X vector
 *  int d = 1 : degree of polynom fit
@@ -460,7 +460,7 @@ Modify hardcoded values for :
 *  Eigen::VectorXf w_th : coefficients for linear regression in order to generate data:  
 $w_{th}(0)X + w_{th}(1)(1, ..., 1)^T$  
 
-**Run the script**
+**Run the script**  
 Follow *1 - Compile with Cmake* instructions.  
 
 ### 3 - Polynomial regression : Matrix inversion method `Polynomial_regression_MSE_matrix_inversion.cpp`
@@ -468,7 +468,7 @@ Follow *1 - Compile with Cmake* instructions.
 Script that runs a Polynomial regression approach described in **§A).3**.
 It first generate noised data, then does regression and plot it using graphical engine.  
 
-**Set-up the script**
+**Set-up the script**  
 Modify hardcoded values for :
 *  int n = 30 : points number in X vector
 *  int d = 1 : degree of polynom fit
@@ -478,7 +478,7 @@ Modify hardcoded values for :
 *  Eigen::VectorXf w_th : coefficients for polynomial regression in order to generate data:  
 $\sum{k=0}^{d}{w_{th, k}*X^{d-k}}$  
 
-**Run the script**
+**Run the script**  
 Follow *1 - Compile with Cmake* instructions.  
 
 ### 3 - Polynomial regression : Matrix inversion method `Multi_Polynomial_regression_MSE_matrix_inversion.cpp`
@@ -486,13 +486,13 @@ Follow *1 - Compile with Cmake* instructions.
 Script that runs a Multi-polynomial regression approach described in **§A).4**.
 It first generate noised data, then does regression and plot it using 3D graphical engine.  
 
-**Set-up the script**
+**Set-up the script**  
 Modify hardcoded values for :
 *  bool demo_simple : Demo of algorithm with Z = fct(X^2; Y^2, Y^1)
 *  bool demo_gaussian :  Demo of algorithm with Z = exp(X^2+ Y^2)  
 
 
-**Run the script**
+**Run the script**  
 Follow *1 - Compile with Cmake* instructions.
 
 
