@@ -2,10 +2,7 @@
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
 ##### Table of Contents  
-[A) Discusion on regression](#A)  
-[B) Python](#B)  
-[C) C++](#C)  
-...snip...    
+  
 
 
 ## Summary
@@ -27,8 +24,6 @@ For reminders and proofs of algebra theorems used, please see [this website](htt
 **I might push some script using Rust later** 
 
 ----------------------------------
-
-<a name="A"/> 
 
 ## A) Discusion on regression
 
@@ -374,9 +369,6 @@ w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 
 
 
-
-<a name="B"/>  
-
 ## B) Python
 
 First few scripts were done in Python...
@@ -424,8 +416,6 @@ Modify hardcoded values for :
 * (float) xmin, xmax : minimum value for x, maximum value for x
 * (int) nb : number of samples
 Then run `Linear_regression_MSE_matrix_inversion.py`
-
-<a name="C"/>  
 
 ## B) C++
 
