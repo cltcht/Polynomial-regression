@@ -178,7 +178,7 @@ if __name__ == "__main__":
     coeff = regression_inversion_matricielle(X, Y, d)
     # convention : de a0 à ... ad
 
-    Y_estimate = np.zeros_like(X)
+    Y_estimate = np.zeros_like(X, dtype=float)
     for i in range(d + 1):
         Y_estimate += coeff[i] * (X ** i)
 
