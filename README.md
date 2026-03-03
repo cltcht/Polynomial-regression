@@ -5,7 +5,7 @@ Few scripts using different programming languages and approaches to tackle fitti
 [A) Discusion on regression](#headers)  
 [Emphasis](#emphasis)  
 ...snip...    
-<a name="headers"/>
+
 
 ## Summary
 As personal project I wanted to play with one "simple" mathematical problem along with differents programming languages.
@@ -77,6 +77,7 @@ For the next approach let's introduce a bit of linear-algebra !
 
 
 ### 2 - 2D Linear regression : Vector projection over linear span space
+<a name="headers"/>
 
 >**Reminder** $\hat{Y}(a, b, X) = aX + b \times (1, ..., 1)^T$.
 
