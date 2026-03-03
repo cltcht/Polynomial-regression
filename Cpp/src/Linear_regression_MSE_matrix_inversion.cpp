@@ -103,8 +103,8 @@ int main () {
     /** SAMPLES **/
     int n = 30; // points number
     int d = 1; // degree of polynom fit
-    float x_sup = 6000;
-    float x_inf = 0.0;
+    float xmax = 6000;
+    float xmin = 0.0;
 
     Eigen::VectorXf X(n) ; 
     Eigen::VectorXf Y(n) ;
@@ -113,6 +113,7 @@ int main () {
     
 
     Eigen::VectorXf w_th(d+1);
+    w_th <<  0.5f, -8.0f; //parameters values (before noising data)
 
     /** NOISE : Gaussian **/
     std::default_random_engine generator;
@@ -132,10 +133,9 @@ int main () {
     
 
     /** Y set of points generation **/
-    w_th <<  0.5f, -8.0f; //parameters values (before noising data)
 
     for (int i = 0; i < n; i++) {
-        float x = i*(x_sup-x_inf)/n + x_inf ;
+        float x = i*(xmax-xmin)/n + xmin ;
         float y = w_th(0)*x + w_th(1);
         X(i) = x;
         Y(i) = y;
