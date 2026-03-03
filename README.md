@@ -1,7 +1,8 @@
 # Polynomial-regression
 Few scripts using different programming languages and approaches to tackle fitting problems.
 
-##### Table of Contents  
+##### Workflows :
+![CI](https://github.com/cltcht/Polynomial-regression/actions/workflows/ci.yml/badge.svg)
   
 
 
