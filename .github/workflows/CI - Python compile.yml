@@ -1,0 +1,32 @@
+name: CI - Python Check
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy matplotlib
+
+      - name: Run all Python scripts
+        env:
+          MPLBACKEND: Agg
+        run: |
+          for script in Python/*.py; do
+            echo "Running $script..."
+            python "$script"
+          done
