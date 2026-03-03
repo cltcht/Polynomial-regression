@@ -367,7 +367,7 @@ w = (A^{T}.A)^{-1}.A^T.Z_{vectorized}
 ```
 
 
-############################################
+=======================================
 
 ## B) Python
 
@@ -415,7 +415,7 @@ Modify hardcoded values for :
 Then run `python3 Linear_regression_MSE_matrix_inversion.py`
 
 
-############################################
+=======================================
 
 ## B) C++
 
@@ -425,7 +425,6 @@ The plotting part is done with `OpenGL` library, graphical engine is in `plot_gr
 
 **Note : I built the 3D engine over functions and doc I found on internet, it is still a bit sketchy (not convenient) on the rotation part, but it works.**
 
-############################################
 
 ### 0 - Setting up environment
 
