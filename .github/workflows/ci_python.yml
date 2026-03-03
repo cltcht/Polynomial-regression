@@ -14,17 +14,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up conda environment
+        uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install numpy matplotlib
+          environment-file: Python/environment.yml
+          activate-environment: benv
 
       - name: Run all Python scripts
         env:
           MPLBACKEND: Agg
+        shell: bash -el {0}
         run: |
           for script in Python/*.py; do
             echo "Running $script..."
