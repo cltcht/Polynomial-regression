@@ -173,7 +173,7 @@ def regression_inversion_matricielle_2D_vectorisée(X:np.ndarray, Y:np.ndarray, 
     #print("colonne neutre")
     A[:, -1] = 1
 
-    print(A)
+    # print(A)
 
     A_T = A.T
 
@@ -199,13 +199,20 @@ if __name__ == "__main__":
 
     #### DEMO coefficients : X² Y³ ####
     # Demonstration on (^2, ^3) order (X,Y) multi-polynome
-    classic_demo = True
+    classic_demo = False
     if classic_demo :
         # Liste des coefficients du polynôme
-        coeff_th_X = [1, 0.2, -0.04]
+        # coeff_th_X = [1, 0.2, -0.04]
 
-        # Liste des coefficients du polynôme
-        coeff_th_Y = [0.0, 0.23, 0.1, 0.05]
+        # # Liste des coefficients du polynôme
+        # coeff_th_Y = [0.0, 0.23, 0.1, 0.05]
+
+        coeff_th_X = [1, 0.2, -0.06]
+        coeff_th_Y = [2.0, 0.0, 0.01]
+        nb_X = 20 #samples
+        X = np.arange(-nb_X, nb_X)
+        nb_Y = 20 #samples
+        Y = np.arange(-nb_Y, nb_Y)  
 
 
     #### DEMO coefficients : ELLIPSE ####
@@ -216,15 +223,19 @@ if __name__ == "__main__":
     # Then we solve Z = T^0.5
     ellipsis_demo = False
     if ellipsis_demo :
-        R = 1
-        a = 3
-        b = 2 
+        R = 10
+        a = 5
+        b = 4
 
         # List of X coefficients for polynome
         coeff_th_X = [R, 0.0, -1.0/a]
         
         # List of Y coefficients for polynome
-        coeff_th_Y = [0.0, 0.0, -1.0/b]
+        coeff_th_Y = [0.0 , 0.0, -1.0/b]
+        nb_X = 100 #samples
+        X = np.linspace(-R, R, num=nb_X)
+        nb_Y = 100 #samples
+        Y = np.linspace(-R, R, num=nb_Y)
 
     ### DEMO coefficients : GAUSIAN ###
     # Using previous results we can predict fitting functions that derives
@@ -235,12 +246,17 @@ if __name__ == "__main__":
     # And plot T = exp(Z)
     gaussian_demo = True
     if gaussian_demo :
-        # Liste des coefficients du polynôme
-        coeff_th_X = [0.0, -5.0, -1.3*1E1]
-        
-        # Liste des coefficients du polynôme
-        coeff_th_Y = [0.0, -3.0, -1.1*1E1]
+        sigma_x = 3.0
+        sigma_y = 2.0
 
+        coeff_th_X = [3.0, 0.0, -1.0/(sigma_x**2)]
+        coeff_th_Y = [0.0, 0.0, -1.0/(sigma_y**2)]
+
+        nb_X = 50
+        X = np.linspace(-10, 10, nb_X)
+
+        nb_Y = 50
+        Y = np.linspace(-10, 10, nb_Y)
 
     # Polynome degree
     # convention : a0 to ... ad
@@ -253,13 +269,8 @@ if __name__ == "__main__":
 
     ### SAMPLES ###
 
-    nb_X = 300 #samples
-    X = np.arange(-nb_X, nb_X)
-    nb_Y = 300 #samples
-    Y = np.arange(-nb_Y, nb_Y)
-
-    print(f" X = {X}")
-    print(f" Y = {Y}")
+    # print(f" X = {X}")
+    # print(f" Y = {Y}")
     mg_X, mg_Y = np.meshgrid(X, Y) #meshgrid
     Z = np.zeros(shape=mg_X.shape)
 
@@ -314,7 +325,7 @@ if __name__ == "__main__":
         Z = np.exp(Z)
         Z_estimate = np.exp(Z_estimate)
 
-
+    print("Z max = ", Z.max())
 	### R**2 PLOT ###
     fig, ax_3d = plt.subplots(subplot_kw={"projection": "3d"})
 
