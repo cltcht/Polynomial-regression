@@ -482,7 +482,7 @@ Modify hardcoded values for :
 *  `float xmin` : min value in X vector
 *  `float xmin` : min value in X vector
 *  `Eigen::VectorXf w_th` : coefficients for linear regression in order to generate data:  
-$w_{th}(0)X + w_{th}(1)(1, ..., 1)^T$  
+$Y = w_{th}[0].X + w_{th}[1].(1, ..., 1)^T$  
 
 **Run the script**  
 Follow *1 - Compile with Cmake* instructions.  
