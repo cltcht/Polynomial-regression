@@ -419,7 +419,7 @@ Script that runs a Polynomial regression approach described in **§A).3**.
 **Run the script**  
 Modify hardcoded values for :
 * `(int) nb` : number of samples
-* `(float np.dnarray) coeff_th` : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector : $\sum{k=0}^{d}{coeff_{th, k}*X^{d-k}}$  
+* `(float np.dnarray) coeff_th` : coefficients of the polynom you want -> degree of the polynom fit depend on size of coeff_th vector : $Y = \sum_{k=0}^{d}{coeff_{th, k}*X^{d-k}}$  
 
 Random is generated according to the choice of parameters. Then regression is computed and result is plotted in `Matplotlib` Figure.  
 
@@ -500,7 +500,7 @@ Modify hardcoded values for :
 *  `float xmin` : min value in X vector
 *  `float xmin` : min value in X vector
 *  `Eigen::VectorXf w_th` : coefficients for polynomial regression in order to generate data:  
-$\sum{k=0}^{d}{w_{th, k}*X^{d-k}}$  
+$Y = \sum_{k=0}^{d}{w_{th, k}*X^{d-k}}$  
 
 **Run the script**  
 Follow *1 - Compile with Cmake* instructions.  
@@ -512,7 +512,7 @@ It first generate noised data, then does regression and plot it using 3D graphic
 
 **Set-up the script**  
 Modify hardcoded values for :
-*  `bool demo_simple` : Demo of algorithm with Z = fct(X^2; Y^2, Y^1)
+*  `bool demo_simple` : Demo of algorithm with Z = fct(X^2, Y^2, Y^1)
 *  `bool demo_gaussian` :  Demo of algorithm with Z = exp(X^2+ Y^2)  
 
 
