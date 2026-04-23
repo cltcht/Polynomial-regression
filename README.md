@@ -14,8 +14,9 @@ I choosed polynomial regression in order to fit a set of points.
 I've seen online some ML based approaches which I don't like.
 It felt like "using a bulldozer to crack an egg" when one can find linear-algebra based solution which at least to me (AND in the case of "easy" fitting problems, eg. low dimension, low data volume) feels more elegant.
 
-I begun with Python, see `/Python` repo for scripts and `readme`§**B)**.
-Then I switched to C++, see `/Cpp` repo for scripts and `readme` §**C)**. 
+I begun with Python, see `/Python` repo for scripts.
+
+Then I switched to C++, see `/Cpp` repo for scripts and :red_circle: directly run demos in `Cpp/demos` :red_circle:.
 
 Graphic engine functions are inspired from [kavan010 git](https://github.com/kavan010) for C++. 
 
