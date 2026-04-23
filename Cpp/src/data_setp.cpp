@@ -31,10 +31,10 @@ datasetp::datasetp(Eigen::VectorXf *vec_X, Eigen::VectorXf *vec_Y) : pX(vec_X), 
  * @return * void 
  */
 void datasetp::print_data(){
-        printf("i | x ; y\n");
-        for(int i = 0; i < (*pX).size(); i++){
-            cout << i << " | " << (*pX)(i) <<  " | " << (*pY)(i) << endl;
-        }  
+        //printf("i | x ; y\n");
+        // for(int i = 0; i < (*pX).size(); i++){
+        //     cout << i << " | " << (*pX)(i) <<  " | " << (*pY)(i) << endl;
+        // }  
     }
 
 /**

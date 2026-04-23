@@ -116,7 +116,7 @@ int main () {
 
     /** NOISE : Gaussian **/
     std::default_random_engine generator;
-    std::normal_distribution<float> distribution(0.0f, 00.0f); //(mean ; std)  
+    std::normal_distribution<float> distribution(0.0f, 100.0f); //(mean ; std)  
 
     /** SYSTEM MATRIX **/
     int n_ = n; //matrix height : nb of points
@@ -166,12 +166,12 @@ int main () {
     // resolution
     w =  (AT_A.inverse()) * AT  * Y;
 
-    cout << "w_th = ( a = " << w_th(0) << " ; b = " << w_th(1) << " ) " << endl; 
-    cout << "w = ( " << w(0) << " ; " << w(1) << " ) " << endl; 
+    //cout << "w_th = ( a = " << w_th(0) << " ; b = " << w_th(1) << " ) " << endl; 
+    //cout << "w = ( " << w(0) << " ; " << w(1) << " ) " << endl; 
 
     Y_fit = w(0)*(*data_couple.pX) + w(1)*Eigen::VectorXf::Ones((*data_couple.pX).size());
 
-    cout << "Rsquared = " << data_couple.R_squared(Y_fit) <<endl;
+    //cout << "Rsquared = " << data_couple.R_squared(Y_fit) <<endl;
 
     /** PLOT REGRESSION **/
     data_couple.print_data();

@@ -451,13 +451,26 @@ The plotting part is done with `OpenGL` library, graphical engine is in `plot_gr
 **Note : I built the 3D engine over functions and doc I found on internet, it is still a bit sketchy (not convenient) on the rotation part, but it works.**
 
 
-### 0 - Setting up environment
+### 0 - Run demos !
+
+> Don't want to bother reading ? Just run it :D
+
+**1D dataset polynomial - P(X):**    
+`./Cpp/build/demo_linear_function`
+`./Cpp/build/demo_cube_function`
+
+**2D dataset polynomial - P(X, Y):**   
+`./Cpp/build/demo_Multi_polynomial_x_y_square`
+`./Cpp/build/demo_Multi_polynomial_gaussian`
+
+
+
+### 1 - Setting up environment & Compile with Cmake
 
 Install following libraries in order to compile the code :  
 `sudo apt install cmake`  
 `sudo apt install libgl-dev libglew-dev libglfw3-dev libglm-dev freeglut3-dev libeigen3-dev`  
 
-### 1 - Compile with Cmake
 
 Go into `/Cpp` folder  
 Run `cmake -B build -S .` to configure cmake  

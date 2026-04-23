@@ -145,7 +145,7 @@ int main () {
         }
     }
 
-    cout << "A size: " << n_ << "x" << m_ << endl;
+    //cout << "A size: " << n_ << "x" << m_ << endl;
 
     // Definition of system of equation : A.w = Ẑ_vec
     for(int j = 0; j < m; j++){ // j = 0 1 2
@@ -165,9 +165,9 @@ int main () {
     w_x << w.segment(0, d_x), w(w.size() - 1);  // coeffs X + constante
     w_y = w.segment(d_x, d_y);// coeffs Y
 
-    cout << "w_th = " << w_th_x.transpose() << " " <<w_th_y.transpose() << endl; 
-    cout << "w_x = " << w_x.transpose() << endl; 
-    cout << "w_y = " << w_y.transpose() << endl; 
+    //cout << "w_th = " << w_th_x.transpose() << " " <<w_th_y.transpose() << endl; 
+    //cout << "w_x = " << w_x.transpose() << endl; 
+    //cout << "w_y = " << w_y.transpose() << endl; 
 
     Z_fit_vec =  A * w;
     Z_fit = Eigen::Map<Eigen::MatrixXf>(Z_fit_vec.data(), n, m);
@@ -176,7 +176,7 @@ int main () {
         Z_fit = Z_fit.array().exp();
     }
 
-    cout << equation << endl;
+    //cout << equation << endl;
     /** PLOT REGRESSION **/
 
     engine.set_camera(X.minCoeff(), X.maxCoeff(), Y.minCoeff(), Y.maxCoeff(), 

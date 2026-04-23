@@ -68,11 +68,11 @@ Engine3D::Engine3D(const char* title) {
             float dx = static_cast<float>(xpos - engine->lastMouseX);
             float dy = static_cast<float>(ypos - engine->lastMouseY);
             float sensitivity = 0.005f;
-            engine->yaw   -= dx * sensitivity;
-            engine->pitch += dy * sensitivity;
+            engine->yaw   += dx * sensitivity;
+            engine->pitch += 0.5 * dy * sensitivity;
             // Upper/lower limits for rotation  
-            if (engine->pitch >  1.5f) engine->pitch =  1.5f;
-            if (engine->pitch < -1.5f) engine->pitch = -1.5f;
+            // if (engine->pitch >  1.5f) engine->pitch =  1.5f;
+            // if (engine->pitch < -1.5f) engine->pitch = -1.5f;
             engine->lastMouseX = xpos;
             engine->lastMouseY = ypos;
         }
