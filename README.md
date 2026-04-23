@@ -16,7 +16,9 @@ It felt like "using a bulldozer to crack an egg" when one can find linear-algebr
 
 I begun with Python, see `/Python` repo for scripts.
 
-Then I switched to C++, see `/Cpp` repo for scripts and :red_circle: directly run demos in `Cpp/demos` :red_circle:.
+Then I switched to C++, see `/Cpp` repo for scripts and 
+
+:red_circle: If you don't want bother reading maths explanation and script config, please just directly run demos in `Cpp/demos` :red_circle:.
 
 Graphic engine functions are inspired from [kavan010 git](https://github.com/kavan010) for C++. 
 
