@@ -457,12 +457,12 @@ The plotting part is done with `OpenGL` library, graphical engine is in `plot_gr
 > Don't want to bother reading ? Just run it :D
 
 **1D dataset polynomial - P(X):**    
-`./Cpp/build/demo_linear_function`
-`./Cpp/build/demo_cube_function`
+ - `./Cpp/demos/demo_linear_function`  
+ - `./Cpp/demos/demo_cube_function`  
 
 **2D dataset polynomial - P(X, Y):**   
-`./Cpp/build/demo_Multi_polynomial_x_y_square`
-`./Cpp/build/demo_Multi_polynomial_gaussian`
+ - `./Cpp/demos/demo_Multi_polynomial_x_y_square`  
+ - `./Cpp/demos/demo_Multi_polynomial_gaussian`  
 
 
 
