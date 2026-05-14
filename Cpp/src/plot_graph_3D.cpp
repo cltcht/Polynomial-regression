@@ -9,8 +9,8 @@
  */
 Engine3D::Engine3D(const char* title) {
 
-    this->yaw = 0.0f;
-    this->pitch = 0.0f;
+    this->theta = 0.0f;
+    this->phi = 0.0f;
     this->lastMouseX = 0.0;
     this->lastMouseY = 0.0;
     this->mousePressed = false;
@@ -43,10 +43,10 @@ Engine3D::Engine3D(const char* title) {
     glfwSetScrollCallback(window, [](GLFWwindow* win, double xoffset, double yoffset) {
     auto* engine = static_cast<Engine3D*>(glfwGetWindowUserPointer(win));
     // yoffset > 0 : mouse (zoom in), yoffset < 0 : zoom out
-    engine->k *= (1.0f - 0.1f * static_cast<float>(yoffset)); // 10% zoom
+    engine->r *= (1.0f - 0.1f * static_cast<float>(yoffset)); // 10% zoom
     // Zoom limits
-    if (engine->k < 0.1f) engine->k = 0.1f;
-    if (engine->k > 5.0f) engine->k = 5.0f;
+    if (engine->r < 0.1f) engine->r = 0.1f;
+    if (engine->r > 5.0f) engine->r = 5.0f;
     });
 
     //ROTATION feature
@@ -68,11 +68,11 @@ Engine3D::Engine3D(const char* title) {
             float dx = static_cast<float>(xpos - engine->lastMouseX);
             float dy = static_cast<float>(ypos - engine->lastMouseY);
             float sensitivity = 0.005f;
-            engine->yaw   += dx * sensitivity;
-            engine->pitch += 0.5 * dy * sensitivity;
+            engine->theta   -= dx * sensitivity;
+            engine->phi     += dy * sensitivity;
             // Upper/lower limits for rotation  
-            // if (engine->pitch >  1.5f) engine->pitch =  1.5f;
-            // if (engine->pitch < -1.5f) engine->pitch = -1.5f;
+            // if (engine->phi >  1.5f) engine->phi =  1.5f;
+            // if (engine->phi < -1.5f) engine->phi = -1.5f;
             engine->lastMouseX = xpos;
             engine->lastMouseY = ypos;
         }
@@ -93,7 +93,7 @@ Engine3D::Engine3D(const char* title) {
  * @param zmin min value of Z
  * @param zmax max value of Z
  * @param fovy_deg angle of view on Y axis 
- * @param k : Scaling factor for zoom out/in
+ * @param r : Scaling factor for zoom out/in
  */
 void Engine3D::run() {
 
@@ -109,26 +109,22 @@ void Engine3D::run() {
     //Distance bewteen circle(or cube) center and camera such that circle(C, R) is in field of view
     // Therefore camera is looking at what we plot
     float distance_camera_circleCenter = Radius/std::tan((this->fovy_deg/2)*(M_PI/180));
-    distance_camera_circleCenter *= this->k ; //Zoom in/out
+    distance_camera_circleCenter *= this->r ; //Zoom in/out
 
     // Initial camera position
     vec3 baseOffset = { distance_camera_circleCenter / sqrt(3), distance_camera_circleCenter / sqrt(3), distance_camera_circleCenter / sqrt(3) };
 
-    // Rotation matrix (for mouse user rotation)
-    Eigen::AngleAxisf rotY(yaw,   Eigen::Vector3f::UnitY());
-
-    Eigen::AngleAxisf rotX(pitch, Eigen::Vector3f::UnitX());
+    // Spherical - Carthesian position
+    float x = distance_camera_circleCenter * cos(this->phi) * cos(this->theta);
+    float y = distance_camera_circleCenter * cos(this->phi) * sin(this->theta);
+    float z = distance_camera_circleCenter * sin(this->phi);
     
-
-    Eigen::Matrix3f rotMat = (rotX * rotY).toRotationMatrix();
-    Eigen::Vector3f offset(baseOffset[0], baseOffset[1], baseOffset[2]);
-    Eigen::Vector3f rotatedOffset = rotMat * offset;
 
     //Camera position = cube_center + (1, 1, 1)* distance_camera_circleCenter/sqrt(3) * Rot
     //Because Camera, cube center are alligned
-    vec3 camera_pos = {cube_center[0] + rotatedOffset.x(),
-                       cube_center[1] + rotatedOffset.y(),
-                       cube_center[2] + rotatedOffset.z()};
+    vec3 camera_pos = {cube_center[0] + x,
+                       cube_center[1] + y,
+                       cube_center[2] + z};
 
 
     // Closest and further possible Z value to plot
@@ -165,12 +161,12 @@ void Engine3D::run() {
  * @param zmin min value of Z
  * @param zmax max value of Z
  * @param fovy_deg angle of view on Y axis 
- * @param k Scaling factor for zoom in/out */
+ * @param r Scaling factor for zoom in/out */
 
 void Engine3D::set_camera(float xmin, float xmax,
                     float ymin, float ymax,
                     float zmin, float zmax,
-                    float fovy_deg, float k){
+                    float fovy_deg, float r){
     this->xmin = xmin;
     this->xmax = xmax;
     this->ymin = ymin;
@@ -178,7 +174,7 @@ void Engine3D::set_camera(float xmin, float xmax,
     this->zmin = zmin;
     this->zmax = zmax;
     this->fovy_deg = fovy_deg;
-    this->k = k;
+    this->r = r;
     
 }
 

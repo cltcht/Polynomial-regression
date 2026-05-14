@@ -40,10 +40,10 @@ struct Engine3D {
     float ymin, ymax;
     float zmin, zmax;
     float fovy_deg;
-    float k;
+    float r;
 
     //user interface for zoom and rotation
-    float yaw, pitch;
+    float theta, phi;
     double lastMouseX, lastMouseY;
     bool mousePressed;
 
@@ -77,7 +77,6 @@ struct Engine3D {
             for(int j = 0; j < X.size(); j++){
                 for(int i = 0; i < Y.size(); i++){
                     plot_couple_3D({ X(j), Y(i), Z(i, j) }, {1.0f, 0.0f, 0.0f});
-                    // plot_couple_3D({ X(j), Y(i), Z_fit(i, j) }, {0.0f, 1.0f, 1.0f});
                 }
             }
 
