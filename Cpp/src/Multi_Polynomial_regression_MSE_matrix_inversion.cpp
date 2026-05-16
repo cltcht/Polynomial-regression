@@ -45,7 +45,7 @@ int main () {
 
 
     /** SAMPLES : Demo Z = fct(X^2; Y^2) **/
-    bool demo_simple = false;
+    bool demo_simple = true;
     if (demo_simple){
         m = 100; // X : points number
         n = 100; // Y : points number
@@ -76,7 +76,7 @@ int main () {
     // For today, we generate dataset = fct(X² , Y²) and assume it's a sqrt(gaussian) data.
     // But in real usage, one can suppose we got raw data from csv datafile from experiment results
     // Then we could apply our algorithm and use our 3D engine to plot fit !
-    bool demo_gaussian = true;
+    bool demo_gaussian = false;
     if (demo_gaussian){
         if (demo_simple) {
             cerr << "Both demos are ON ! Please choose : demo_gaussian XOR demo_simple !" << endl;
